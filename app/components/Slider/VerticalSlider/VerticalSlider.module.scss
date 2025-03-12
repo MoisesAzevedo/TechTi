@@ -1,0 +1,37 @@
+section.slider {
+  height: auto;
+  padding: 0 !important;
+}
+
+.slider_content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  div {
+    flex-shrink: 0;
+  }
+
+  input {
+    display: none;
+  }
+
+  .card_area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 78px;
+
+    overflow: hidden;
+
+    height: 360px;
+    width: 500px;
+    gap: 10px;
+
+    .move_it {
+      display: flex;
+      flex-direction: column;
+      transition: 1s;
+    }
+  }
+}

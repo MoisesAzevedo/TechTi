@@ -1,10 +1,14 @@
 import type { Metadata } from "next";
-import { Counter } from "./components/counter/Counter";
-
-export default function IndexPage() {
-  return <Counter />;
-}
+import HomePage from "./pages/home/page";
 
 export const metadata: Metadata = {
-  title: "Redux Toolkit",
+  title: "TechTi Tecnologia - Home"
 };
+
+export default function IndexPage() {
+  return (
+    <main>
+      <HomePage />
+    </main>
+  );
+}

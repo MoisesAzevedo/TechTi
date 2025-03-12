@@ -1,0 +1,84 @@
+
+Exemple of the slide archieve /components/ui/Players/Players.jsx
+Example of style /STYLE EXAMPLE.txt   or   /components/ui/Players/players.module.scss
+
+
+
+## How to create a new slide?
+
+- This is a base component for creating slides.  
+- You need to create the JSX and design of the cards and radio selectors in a new file.  
+- Additionally, you need to provide the following props: **firstContent**, **content**, **navigationRadios**, and **namePrefix**.  
+
+Copy these arrays in your slide to create the content design and pass them as props:  
+
+const firstContentArr = [{ item: (<div>here code the jsx of first card </div>)}];
+const slideContent = [{ item: (<div>here code the jsx of all other cards</div>)}];
+const slideName = "stringExample";
+const radios = [         
+    {       
+    
+      {/* navigation radios */}
+
+      item: (
+        <section className={styles.navigation_area}>
+          {/* automatic navigation */}
+          <div className={styles.nav_auto}>
+            <div className={styles.auto_radio0} />
+
+            {slideContent.map((_, index) => (                             {/* use slideContent */}
+              <div className={styles[`auto_radio${index + 1}`]} />
+            ))}
+          </div>
+
+          {/* manual navigation */}
+          <div className={styles.nav_manual}>
+            <div>
+              {/* //label for input 1 */}
+              <label
+                key={0}
+                htmlFor={`${slideName}-radio0`}       {/* use slideName */}
+                className={styles.manual_radio}
+              ></label>
+
+              {/*  //label for other inputs */}
+              {slideContent.map((_, index) => (
+                <label
+                  key={index + 1}
+                  htmlFor={`${slideName}-radio${index + 1}`}
+                  className={styles.manual_radio}
+                ></label>
+              ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+  ];
+
+  
+
+  
+<Slider
+        firstContent={firstContentArr}
+        content={slideContent}
+        namePrefix={slideName}
+        navigationRadios={radios}
+/>
+
+Separating the first slide is very important, as it is used to animate the slide movement.
+
+  
+  
+  
+********************************STYLES********************************
+
+
+PRECISA ANIMAR O MOVIMENTO p/ um slide lateral
+
+to styling the automatic radios.  
+
+use .radio(index):checked. Exemple:
+
+.radio0:checked ~ .div{ background: blue; }
+.radio1:checked ~ .div{ background: blue; }

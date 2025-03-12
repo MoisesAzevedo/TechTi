@@ -1,0 +1,205 @@
+section.slider {
+  height: auto;
+  padding: 0 !important;
+}
+
+.slider_content {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  div {
+    flex-shrink: 0;
+  }
+
+  input {
+    display: none;
+  }
+
+  .card_area {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-top: 78px;
+
+    overflow: hidden;
+
+    height: 360px;
+    width: 500px;
+    gap: 10px;
+
+    .primeiro {
+      width: 450px;
+      height: 350px;
+
+      display: flex;
+      gap: 20px;
+
+      transition: 1s;
+
+      .card1 {
+        width: 223px;
+        height: 350px;
+
+        display: flex;
+        flex-direction: column;
+        padding-left: 25px;
+        gap: 10px;
+
+        border-radius: 10px;
+        background: rgba(17, 35, 110, 1);
+      }
+      .card2 {
+        width: 223px;
+        height: 350px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        border-radius: 10px;
+        border: 1px solid transparent;
+        box-shadow: inset 0 0 0 2px rgba(17, 35, 110, 1);
+        background: rgba(255, 255, 255, 1);
+        background-image: linear-gradient(white, white),
+          linear-gradient(180deg, #ccd6ff, #1745ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+
+        color: rgba(0, 34, 176, 1);
+      }
+    }
+
+    .slide_box {
+      width: 450px;
+      height: 350px;
+
+      display: flex;
+      gap: 20px;
+
+      transition: 1s;
+      .card1 {
+        width: 223px;
+        height: 350px;
+
+        display: flex;
+        flex-direction: column;
+        padding-left: 25px;
+        gap: 10px;
+
+        background: rgba(17, 35, 110, 1);
+        border-radius: 10px;
+      }
+      .card2 {
+        width: 223px;
+        height: 350px;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 10px;
+
+        border-radius: 10px;
+        border: 1px solid transparent;
+        box-shadow: inset 0 0 0 2px rgba(17, 35, 110, 1);
+        background: rgba(255, 255, 255, 1);
+        background-image: linear-gradient(white, white),
+          linear-gradient(180deg, #ccd6ff, #1745ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+
+        color: rgba(0, 34, 176, 1);
+      }
+    }
+  }
+
+  .navigation_area {
+    display: flex;
+    margin-top: 150px;
+
+    .nav_manual {
+      position: absolute;
+
+      display: flex;
+      flex-direction: column;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .manual_btn {
+        border-radius: 50% 50%;
+        width: 15px;
+        height: 15px;
+
+        transition: 0.2s;
+
+        &:hover,
+        .nav_auto div {
+          cursor: pointer;
+          border: none;
+          background: linear-gradient(
+            270.12deg,
+            #7993ff -19.64%,
+            #ccd6ff 99.9%
+          );
+        }
+      }
+    }
+
+    .nav_auto {
+      position: absolute;
+      gap: 10px;
+
+      display: flex;
+      flex-direction: column;
+
+      div {
+        border: 1px solid var(--secondary-color);
+        border-radius: 50% 50%;
+        width: 15px;
+        height: 15px;
+
+        transition: 0.2s;
+      }
+    }
+  }
+
+  .radio1_review:checked ~ .navigation_area .nav_auto .auto_btn1 {
+    border: none;
+    background: linear-gradient(270.12deg, #7993ff -19.64%, #ccd6ff 99.9%);
+  }
+  .radio2_review:checked ~ .navigation_area .nav_auto .auto_btn2 {
+    border: none;
+    background: linear-gradient(270.12deg, #7993ff -19.64%, #ccd6ff 99.9%);
+  }
+  .radio3_review:checked ~ .navigation_area .nav_auto .auto_btn3 {
+    border: none;
+    background: linear-gradient(270.12deg, #7993ff -19.64%, #ccd6ff 99.9%);
+  }
+  .radio4_review:checked ~ .navigation_area .nav_auto .auto_btn4 {
+    border: none;
+    background: linear-gradient(270.12deg, #7993ff -19.64%, #ccd6ff 99.9%);
+  }
+
+  //movement of banners
+  .radio1_review:checked ~ .card_area .primeiro {
+    margin-top: 0;
+  }
+
+  .radio2_review:checked ~ .card_area .primeiro {
+    margin-top: -360px;
+  }
+
+  .radio3_review:checked ~ .card_area .primeiro {
+    margin-top: -720px;
+  }
+
+  .radio4_review:checked ~ .card_area .primeiro {
+    margin-top: -1080px;
+  }
+}

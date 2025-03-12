@@ -1,0 +1,274 @@
+.cases {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 70px;
+
+  padding-top: 67px;
+  padding-bottom: 69px;
+  gap: 46px;
+
+  background: linear-gradient(
+    95.3deg,
+    #e3e3e3 -1.5%,
+    #eeeeee 49.17%,
+    #e3e3e3 99.84%
+  );
+  border-radius: 25px;
+
+  width: 1036px;
+  height: 321px;
+}
+
+.reviews {
+  display: flex;
+  justify-content: center;
+  padding-top: 1px;
+  gap: 50px;
+
+  width: 100%;
+  height: 380px;
+
+  color: white;
+
+  .intro {
+    width: 331px;
+
+    font-size: 16px;
+    color: rgba(3, 11, 77, 1);
+  }
+
+  h2 {
+    width: 357px;
+    margin-bottom: 20px;
+
+    background: linear-gradient(91.03deg, #030b4d 0.88%, #071ab3 99.86%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-clip: text;
+
+    font-size: 28px;
+  }
+
+  .text {
+    margin-top: 100px;
+  }
+}
+
+.soluctions {
+  background-image: url("/background/bg_soluçoes.png");
+  background-size: cover;
+
+  background-color: rgba(22, 0, 100, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  height: 2690px;
+  width: 100%;
+
+  color: white;
+
+  .intro {
+    margin-top: 100px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    h1 {
+      color: white;
+
+      width: 591px;
+      height: 92px;
+
+      text-align: center;
+    }
+
+    p {
+      color: rgba(185, 185, 185, 1);
+
+      width: 591px;
+      height: 84px;
+
+      text-align: center;
+    }
+  }
+  .services {
+    .services_box {
+      display: flex;
+      gap: 91px;
+      margin-top: 80px;
+
+      width: 833px;
+
+      .services_view {
+        height: 282px;
+        width: 425px;
+
+        padding-left: 40px;
+        padding-bottom: 45px;
+        position: relative;
+
+        background-color: #d9d9d9;
+        clip-path: polygon(
+          0 0,
+          398px 0%,
+          100% 26px,
+          100% 100%,
+          22px 100%,
+          0% 259px
+        );
+      }
+
+      .services_view_variant {
+        height: 282px;
+        width: 425px;
+
+        padding-left: 40px;
+        padding-bottom: 45px;
+        position: relative;
+
+        background-color: #d9d9d9;
+        clip-path: polygon(
+          26px 0,
+          100% 0,
+          100% 259px,
+          402px 100%,
+          0 100%,
+          0 26px
+        );
+      }
+
+      .view_name {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        position: absolute;
+        bottom: 45px;
+
+        img {
+          width: 35px;
+        }
+      }
+
+      .services_text {
+        width: 327px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        p {
+          font-size: 20px;
+          font-weight: normal;
+        }
+
+        button {
+          background: #ffffff;
+          border: 1px solid #ccd6ff;
+          border-radius: 10px;
+
+          width: 205px;
+          height: 55px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+
+          h1 {
+            font-size: 20px;
+            color: #344bae;
+            font-weight: bold;
+          }
+
+          img {
+            width: 32px;
+            height: 32px;
+          }
+
+          &:hover {
+            background: #d9d9d9;
+            cursor: pointer;
+
+            border: 1px solid #d9d9d9;
+          }
+        }
+      }
+    }
+  }
+
+  .guarantee {
+    background: linear-gradient(
+      95.77deg,
+      rgba(227, 227, 227, 0.8) -1.49%,
+      #eeeeee 49.73%,
+      rgba(227, 227, 227, 0.8) 97.2%
+    );
+    border-radius: 10px;
+
+    width: 835px;
+    height: 417px;
+
+    display: flex;
+    padding-left: 98px;
+    line-height: normal;
+    position: relative;
+
+    margin-top: 100px;
+
+    h2 {
+      color: rgba(3, 11, 77, 1);
+
+      width: 295px;
+      height: 68px;
+
+      margin-top: 66px;
+    }
+
+    .guarantee_list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      margin-top: 38px;
+
+      div {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        color: rgba(3, 11, 77, 1);
+
+        img {
+          width: 15px;
+          height: 15px;
+        }
+      }
+    }
+
+    .guarantee_img {
+      display: flex;
+      align-items: end;
+
+      position: absolute;
+      bottom: 0;
+      right: 0;
+
+      img {
+        width: 480px;
+        height: 456.68px;
+      }
+    }
+  }
+}
+
+.players {
+  margin-top: 55px;
+  margin-bottom: 55px;
+  display: flex;
+  justify-content: center;
+}
