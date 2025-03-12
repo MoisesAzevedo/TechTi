@@ -134,7 +134,7 @@ export default function HomePage() {
             <div className={styles.services_view_variant}>
               <div className={styles.view_name}>
                 <img src="/icons/shadow_blue_dot.png" />
-                <h1>Serviço 01</h1>
+                <h1>Serviço 1</h1>
               </div>
             </div>
           </div>
