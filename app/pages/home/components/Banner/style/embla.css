@@ -42,7 +42,7 @@
 
 .controls_wrapper {
   display: flex;
-  position: relative;
+  position: absolute;
 
   width: 1030px;
   height: 50px;
