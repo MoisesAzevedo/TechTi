@@ -1,14 +1,15 @@
 import styles from "@/app/styles/page.module.scss";
-import BannerSlider from "./components/Banner/BannerSlider";
+/* import BannerSlider from "./components/Banner/BannerSlider"; */
+
 import DefaultCarousel from "@/app/components/Carousels/DefaultCarousel";
 import ReviewSlider from "./components/ReviewSlider/ReviewSlider";
-import { Button } from "@/components/ui/button";
 import Players from "./components/Players/Players";
+import Banner from "./components/Banner/components/Banner";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
-      <BannerSlider />
+      <Banner />
 
       <section className={styles.cases}>
         <h1>Nossos cases de sucesso</h1>

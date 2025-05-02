@@ -27,7 +27,8 @@
     "app/components/Buttons/ButtonDefault.jsx",
     "app/components/Header/Header/Header.jsx",
     "app/page.tsx",
-    "app/components/Slider/Slider.jsx"
+    "app/components/Slider/Slider.jsx",
+    "app/pages/home/components/Banner/BannerSlider.tsx"
   ],
   "exclude": ["node_modules"]
 }

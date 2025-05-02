@@ -1,34 +1,97 @@
 
-Exemple of the slide archieve /components/ui/Players/Players.jsx
-Example of style /STYLE EXAMPLE.txt   or   /components/ui/Players/players.module.scss
+See the examples in ./docs/ExampleSlider.tsx and ExampleSlider.module.tsx
+
+
+You will see on this page:
+## intro
+## How to create a new slide?
+## Configure the radios
+
+
+
+
+
+
+## intro
+
+- This is a base component for creating a slider.  
+- You need to create the JSX and design of the cards and radio selectors in a new file.  
+- Additionally, you need to provide the following props: 
+
+autoSlide: true or false - to enable  the automatic movement of slides
+namePrefix: string - name of the slide (this is used to name radio inputs)
+firstContent: array - it's necessary to create the first slide separately (this is used for movement)
+content: array - the other slides
+navigationRadios: array - your styled radio inputs 
+ 
+
+
+# type of props (once configured on the base component, you cannot reconfigure them):
+
+autoSlide: boolean;
+namePrefix: string;
+firstContent: { item: React.ReactNode }[];
+content: { item: React.ReactNode }[];
+navigationRadios: { item: React.ReactNode }[];
+___________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
 
 
 
 ## How to create a new slide?
+ 
+- Copy the next variables into your slide to create the content design and pass them as props on a tsx 
+<VerticalSlider/> afterwards.  
 
-- This is a base component for creating slides.  
-- You need to create the JSX and design of the cards and radio selectors in a new file.  
-- Additionally, you need to provide the following props: **firstContent**, **content**, **navigationRadios**, and **namePrefix**.  
+- Or create your variables based on this, but the radios need to behave exactly as in the example, 
+changing only the classNames and the slideContent on map, and styled with your preference 
+(see how to configure the radios. in the next title ## Configure the radios )
 
-Copy these arrays in your slide to create the content design and pass them as props:  
+- Separating the first slide is very important, as it is used to animate the slide movement.
+ 
 
+> Variables:
+
+const autoSlide = true;
+const slideName = "stringExample";
 const firstContentArr = [{ item: (<div>here code the jsx of first card </div>)}];
 const slideContent = [{ item: (<div>here code the jsx of all other cards</div>)}];
-const slideName = "stringExample";
-const radios = [         
-    {       
-    
-      {/* navigation radios */}
-
+const radios = [
+    {
       item: (
         <section className={styles.navigation_area}>
           {/* automatic navigation */}
           <div className={styles.nav_auto}>
-            <div className={styles.auto_radio0} />
+            <div
+              className={
+                activeSlide === 0 ? styles.auto_radio : styles.autoradio1
+              }
+            />
 
-            {slideContent.map((_, index) => (                             {/* use slideContent */}
-              <div className={styles[`auto_radio${index + 1}`]} />
-            ))}
+            {slideContent.map((_, index) => {
+              console.log("activeSlide:", activeSlide);
+              console.log("index:", index);
+
+              const activeSlideCorrect = activeSlide - 1;
+
+              return (
+                <div
+                  key={index}
+                  className={
+                    activeSlideCorrect === index
+                      ? styles.auto_radio
+                      : styles.autoradio1
+                  }
+                />
+              );
+            })}
           </div>
 
           {/* manual navigation */}
@@ -37,7 +100,7 @@ const radios = [
               {/* //label for input 1 */}
               <label
                 key={0}
-                htmlFor={`${slideName}-radio0`}       {/* use slideName */}
+                htmlFor={`${slideName}-radio0`}
                 className={styles.manual_radio}
               ></label>
 
@@ -57,28 +120,66 @@ const radios = [
   ];
 
   
+> Now, return the tsx component: 
 
   
-<Slider
+<VerticalSlider
+        autoSlide = {autoSlide}
         firstContent={firstContentArr}
         content={slideContent}
         namePrefix={slideName}
         navigationRadios={radios}
 />
 
-Separating the first slide is very important, as it is used to animate the slide movement.
 
+___________________________________________________________________________________________________________
+
+
+
+
+
+
+## Configure the radios
+
+
+
+# Getting  the active state of slides
+- You need to get the active state of slides with Redux.
+
+first, import the useSelector:
+
+  import { useAppSelector } from "@/lib/hooks";
+
+after, copy this variable:
+
+  const activeSlide = useAppSelector((state) => state.slideChecked.checked);
+
+Now, proceed with  the next title
+
+
+
+# automatic and manual navigation radios
+
+ 
+copy the const radios on ./docs/ExampleSlider.tsx
+it's very important that you copy exactly  the const, changing only the clasNames and the slideContent on map
+
+It's necessary that you create automatic navigation, as in the example.
+You also need to create two styles for the automatic navigation, as shown in the ExampleSlider:
+
+   className={
+               activeSlideCorrect === index
+                   ? styles.auto_radio
+                   : styles.autoradio1
+               }
+
+  This alternates between checked and unchecked.
+  auto_radio is the style for unchecked (configure the className as you prefer).
+  autoradio1 is the style of checked.
+
+- Now, insert your classNames, with your style.
+- create manual navigation, as shown in the ExampleSlider.
+
+___________________________________________________________________________________________________________
   
-  
-  
-********************************STYLES********************************
-
-
-PRECISA ANIMAR O MOVIMENTO p/ um slide lateral
-
-to styling the automatic radios.  
-
-use .radio(index):checked. Exemple:
-
-.radio0:checked ~ .div{ background: blue; }
-.radio1:checked ~ .div{ background: blue; }
+ 

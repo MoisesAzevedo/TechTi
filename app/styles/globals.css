@@ -54,9 +54,12 @@ h2 {
 }
 
 :root {
-  --primary-color: #5aff60; /* Azul */
-  --secondary-color: #d9d9d9; /* Amarelo */
+  /* colors */
+  --primary-color: #5aff60;
+  --secondary-color: #d9d9d9;
   --secondary-text-color: white;
+  /* animations */
+  --hover-transition: 0.2s ease-in-out;
 }
 
 @layer base {

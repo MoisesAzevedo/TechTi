@@ -1,3 +1,5 @@
+///SLICE CRIADO PARA SER USADO EM @/app/components/Slider
+
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 // Define the state type
