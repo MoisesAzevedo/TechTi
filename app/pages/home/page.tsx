@@ -1,21 +1,21 @@
-import styles from "@/app/styles/page.module.scss";
+import styles from "./page.module.scss";
+/* components */
 /* import BannerSlider from "./components/Banner/BannerSlider"; */
 
 import DefaultCarousel from "@/app/components/Carousels/DefaultCarousel";
 import ReviewSlider from "./components/ReviewSlider/ReviewSlider";
 import Players from "./components/Players/Players";
 import Banner from "./components/Banner/components/Banner";
+import BlogCarrousel from "./components/BlogCarrousel/BlogCarrousel";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col">
       <Banner />
-
       <section className={styles.cases}>
         <h1>Nossos cases de sucesso</h1>
         <DefaultCarousel />
       </section>
-
       <section className={styles.reviews}>
         <div className={styles.text}>
           <h2>O que nossos clientes falam sobre nós?</h2>
@@ -28,7 +28,6 @@ export default function HomePage() {
 
         <ReviewSlider />
       </section>
-
       <section className={styles.soluctions}>
         <div className={styles.intro}>
           <h1>
@@ -177,6 +176,10 @@ export default function HomePage() {
       <section className={styles.players}>
         <Players />
       </section>
+
+      <div className="blog_carrousel">
+        <BlogCarrousel />
+      </div>
     </div>
   );
 }

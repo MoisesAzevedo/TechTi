@@ -20,6 +20,8 @@
 
   width: 1036px;
   height: 321px;
+
+  color: black;
 }
 
 .reviews {
@@ -61,13 +63,13 @@
 .soluctions {
   background-image: url("/background/bg_soluçoes.png");
   background-size: cover;
-
   background-color: rgba(22, 0, 100, 1);
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 114px;
 
-  height: 2690px;
   width: 100%;
 
   color: white;
