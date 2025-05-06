@@ -16,7 +16,7 @@ export const BlogArticle: BlogArticle[] = [
     date: "02/05/2025",
     description:
       "Descubra como as novas tecnologias estão transformando o mercado global.",
-    article: "https://www.google.com"
+    article: "https://news.google.com/search?q=Tecnologia+revoluciona+o+mercado"
   },
   {
     image:
@@ -26,7 +26,8 @@ export const BlogArticle: BlogArticle[] = [
     date: "01/05/2025",
     description:
       "Pesquisadores anunciam avanços significativos em IA, prometendo mudanças no futuro.",
-    article: "https://www.google.com"
+    article:
+      "https://news.google.com/search?q=Avanços+em+Inteligência+Artificial"
   },
   {
     image:
@@ -36,7 +37,8 @@ export const BlogArticle: BlogArticle[] = [
     date: "30/04/2025",
     description:
       "Empresas adotam práticas sustentáveis para reduzir impacto ambiental.",
-    article: "https://www.google.com"
+    article:
+      "https://news.google.com/search?q=Soluções+sustentáveis+para+empresas"
   },
   {
     image:
@@ -46,7 +48,7 @@ export const BlogArticle: BlogArticle[] = [
     date: "28/04/2025",
     description:
       "Aumenta a demanda por soluções de segurança cibernética em empresas de todos os portes.",
-    article: "https://www.google.com"
+    article: "https://news.google.com/search?q=Segurança+cibernética+em+alta"
   },
   {
     image:
@@ -56,7 +58,7 @@ export const BlogArticle: BlogArticle[] = [
     date: "25/04/2025",
     description:
       "Especialistas discutem como o trabalho remoto continuará a evoluir nos próximos anos.",
-    article: "https://www.google.com"
+    article: "https://news.google.com/search?q=O+futuro+do+trabalho+remoto"
   },
   {
     image:
@@ -66,7 +68,7 @@ export const BlogArticle: BlogArticle[] = [
     date: "24/04/2025",
     description:
       "O 5G está transformando a conectividade e abrindo novas possibilidades para empresas e consumidores.",
-    article: "https://www.google.com"
+    article: "https://news.google.com/search?q=A+ascensão+do+5G"
   },
   {
     image:
@@ -76,7 +78,7 @@ export const BlogArticle: BlogArticle[] = [
     date: "23/04/2025",
     description:
       "Startups brasileiras ganham reconhecimento internacional por suas inovações.",
-    article: "https://www.google.com"
+    article: "https://news.google.com/search?q=Startups+brasileiras+em+destaque"
   },
   {
     image:
@@ -86,7 +88,7 @@ export const BlogArticle: BlogArticle[] = [
     date: "22/04/2025",
     description:
       "A educação digital está crescendo rapidamente, oferecendo novas oportunidades de aprendizado.",
-    article: "https://www.google.com"
+    article: "https://news.google.com/search?q=Educação+digital+em+expansão"
   },
   {
     image:
@@ -96,6 +98,7 @@ export const BlogArticle: BlogArticle[] = [
     date: "21/04/2025",
     description:
       "A automação está mudando o mercado de trabalho, criando novos desafios e oportunidades.",
-    article: "https://www.google.com"
+    article:
+      "https://news.google.com/search?q=O+impacto+da+automação+no+mercado+de+trabalho"
   }
 ];

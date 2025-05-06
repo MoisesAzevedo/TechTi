@@ -14,7 +14,6 @@ import "../css/embla.css";
 
 const OPTIONS: EmblaOptionsType = { loop: true, duration: 30 };
 
-// Gerando JSX diretamente para os slides
 const SLIDES = BlogArticle.map((article, index) => (
   <Card
     key={index}
@@ -23,11 +22,24 @@ const SLIDES = BlogArticle.map((article, index) => (
     title={article.title}
     description={article.description}
     date={article.date}
+    article={article.article || ""}
   />
 ));
 
+const SlideView = SLIDES.reduce<JSX.Element[][]>((result, slide, index) => {
+  const chunkIndex = Math.floor(index / 3);
+
+  if (!result[chunkIndex]) {
+    result[chunkIndex] = []; // Cria um novo grupo
+  }
+
+  result[chunkIndex].push(slide);
+
+  return result;
+}, []);
+
 const Carrousel = () => {
-  return <EmblaCarousel slides={SLIDES} options={OPTIONS} />;
+  return <EmblaCarousel slides={SlideView} options={OPTIONS} />;
 };
 
 export default Carrousel;

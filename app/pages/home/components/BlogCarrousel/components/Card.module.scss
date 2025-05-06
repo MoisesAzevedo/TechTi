@@ -1,0 +1,7 @@
+.diagonal_arrow {
+  transition: fill 0.3s ease; // Suaviza a transição da cor
+
+  &:hover {
+    fill: blue; // Cor ao passar o mouse
+  }
+}

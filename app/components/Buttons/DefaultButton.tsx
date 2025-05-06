@@ -27,7 +27,7 @@ const DefaultButton: React.FC<DefaultButtonProps> = ({
       className={
         className
           ? className
-          : "bg-[#CCD6FF] border-none hover:bg-primary hover:shadow-[0_0_6px_#5AFF60]  w-[137px] h-[39px] text-[#030B4D] font-bold"
+          : "bg-[#CCD6FF] border-none hover:bg-primary hover:shadow-[0_0_6px_#5AFF60]  w-[137px] h-[39px] text-[#030B4D] text-[16px] font-bold"
       }
     >
       {value}

@@ -1,6 +1,10 @@
-import React from "react";
+"use client";
+
+import React, { use } from "react";
 /* components */
 import { DiagonalArrow } from "@/public/icons/diagonal_arrow";
+/* style */
+import style from "./Card.module.scss";
 
 interface CardProps {
   imageUrl: string;
@@ -8,6 +12,7 @@ interface CardProps {
   title: string;
   description: string;
   date: string;
+  article: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -15,7 +20,8 @@ const Card: React.FC<CardProps> = ({
   category,
   title,
   description,
-  date
+  date,
+  article
 }) => {
   return (
     <div
@@ -56,9 +62,18 @@ const Card: React.FC<CardProps> = ({
             {title}
           </h3>
         </div>
-        <span className="text-[12px] text-[#A6A6A6]">{date}</span>
-        <div className="absolute bottom-8 right-10">
-          <DiagonalArrow />
+        <p className="text-[12px] text-[#A6A6A6]">{date}</p>
+        <div className="absolute bottom-8 right-10 cursor-pointer ">
+          <a href={article} target="_blank" rel="noopener noreferrer">
+            <DiagonalArrow
+              style={{
+                fill: "#AFAFAF", // Cor padrão
+                transition: "var(--hover-transition)" // Transição suave
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.fill = "var(--blue)")} // Cor ao passar o mouse
+              onMouseLeave={(e) => (e.currentTarget.style.fill = "#AFAFAF")} // Cor ao remover o mouse
+            />
+          </a>
         </div>
       </article>
     </div>

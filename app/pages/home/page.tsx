@@ -177,7 +177,7 @@ export default function HomePage() {
         <Players />
       </section>
 
-      <div className="blog_carrousel">
+      <div className={styles.blog_carrousel}>
         <BlogCarrousel />
       </div>
     </div>

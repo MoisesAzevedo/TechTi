@@ -29,10 +29,13 @@
 .blog_embla__slide__number {
   font-size: 4rem;
   font-weight: 600;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   height: 361px;
+  gap: 53px;
 
   user-select: none;
 
