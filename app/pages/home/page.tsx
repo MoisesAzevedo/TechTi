@@ -7,6 +7,7 @@ import ReviewSlider from "./components/ReviewSlider/ReviewSlider";
 import Players from "./components/Players/Players";
 import Banner from "./components/Banner/components/Banner";
 import BlogCarrousel from "./components/BlogCarrousel/BlogCarrousel";
+import MessageForm from "./components/MessageForm/MessageForm";
 
 export default function HomePage() {
   return (
@@ -179,6 +180,10 @@ export default function HomePage() {
 
       <div className={styles.blog_carrousel}>
         <BlogCarrousel />
+      </div>
+
+      <div className={styles.message_form}>
+        <MessageForm />
       </div>
     </div>
   );
