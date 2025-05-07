@@ -8,6 +8,7 @@ import Players from "./components/Players/Players";
 import Banner from "./components/Banner/components/Banner";
 import BlogCarrousel from "./components/BlogCarrousel/BlogCarrousel";
 import MessageForm from "./components/MessageForm/MessageForm";
+import NewsLetter from "./components/NewsLetter/NewsLetter";
 
 export default function HomePage() {
   return (
@@ -184,6 +185,10 @@ export default function HomePage() {
 
       <div className={styles.message_form}>
         <MessageForm />
+      </div>
+
+      <div className={styles.newsletter}>
+        <NewsLetter />
       </div>
     </div>
   );
