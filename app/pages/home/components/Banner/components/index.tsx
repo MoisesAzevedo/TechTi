@@ -9,7 +9,7 @@ import '../css/sandbox.css'
 import '../css/embla.css'
 
 const OPTIONS: EmblaOptionsType = { loop: true, duration: 30 }
-const SLIDE_COUNT = 5
+const SLIDE_COUNT = 3
 const SLIDES = Array.from(Array(SLIDE_COUNT).keys())
 
 const App: React.FC = () => (

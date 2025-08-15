@@ -23,6 +23,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const sec = 5000;
   const [delay, setDelay] = useState(sec);
 
+  // Array das imagens do banner
+  const bannerImages = [
+    "/img/banner/futuro.avif",
+    "/img/banner/soluçoes.avif",
+    "/img/banner/suporte.avif"
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Fade(),
     Autoplay({ playOnInit: true, delay: delay })
@@ -52,8 +59,8 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             <div className="embla__slide" key={index}>
               <img
                 className="embla__slide__img"
-                src={`https://picsum.photos/600/350?v=${index}`}
-                alt="Your alt text"
+                src={bannerImages[index] || bannerImages[0]}
+                alt={`Banner ${index + 1}`}
               />
             </div>
           ))}
