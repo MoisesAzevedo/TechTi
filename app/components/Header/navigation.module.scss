@@ -1,8 +1,16 @@
 .logo {
-  width: 44px;
-  height: 54px;
-
+  width: 35px;
+  height: 35px;
   margin-right: 90px;
+  color: #54ef58;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+
+  &:hover {
+    color: white;
+    filter: brightness(0) saturate(100%) invert(100%);
+  }
 }
 
 .buttons {

@@ -1,4 +1,5 @@
 import styles from "./page.module.scss";
+import Link from "next/link";
 /* components */
 /* import BannerSlider from "./components/Banner/BannerSlider"; */
 
@@ -9,6 +10,7 @@ import Banner from "./components/Banner/components/Banner";
 import BlogCarrousel from "./components/BlogCarrousel/BlogCarrousel";
 import MessageForm from "./components/MessageForm/MessageForm";
 import NewsLetter from "./components/NewsLetter/NewsLetter";
+import MouseShadowEffect, { AnimatedElement } from "./components/MouseShadowEffect";
 
 export default function HomePage() {
   return (
@@ -31,7 +33,13 @@ export default function HomePage() {
         <ReviewSlider />
       </section>
       <section className={styles.soluctions}>
-        <div className={styles.intro}>
+        <MouseShadowEffect 
+          effectImage="/effects/blue-light.png"
+          size={1600}
+          opacity={1.0}
+          blur={30}
+        />
+        <AnimatedElement className={styles.intro} direction="up" delay={0.1}>
           <h1>
             Soluções que se <br />
             adaptam ao seu ecossistema
@@ -42,23 +50,23 @@ export default function HomePage() {
             laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet. Eum
             maxime quae et optio rerum sed laborum accusantium rem quia eaque.{" "}
           </p>
-        </div>
+        </AnimatedElement>
 
         <div className={styles.services}>
-          <div className={styles.services_box}>
-            <div className={styles.services_view}>
+          <AnimatedElement direction="left" delay={0.2}>
+            <div className={styles.services_box}>
+            <div className={`${styles.services_view} ${styles.infraestrutura}`}>
               <div className={styles.view_name}>
                 <img src="/icons/shadow_blue_dot.png" />
-                <h1>Serviço 01</h1>
+                <h1>Infraestrutura</h1>
               </div>
             </div>
 
             <div className={styles.services_text}>
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
-                  laborum accusantium rem quia eaque. Lorem ipsum dolor sit
-                  amet.
+                  Otimize sua infraestrutura de TI para alcançar o máximo desempenho
+                  do seu operacional.
                 </p>
               </div>
 
@@ -68,14 +76,14 @@ export default function HomePage() {
               </button>
             </div>
           </div>
+          </AnimatedElement>
 
-          <div className={styles.services_box}>
+          <AnimatedElement direction="right" delay={0.3}>
+            <div className={styles.services_box}>
             <div className={styles.services_text}>
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
-                  laborum accusantium rem quia eaque. Lorem ipsum dolor sit
-                  amet.
+                  Amplie o horizonte dos seus serviços. Descubra o potencial da tecnologia através da nossa consultoria personalizada, adaptada especialmente para o seu tipo de negócio
                 </p>
               </div>
 
@@ -85,28 +93,28 @@ export default function HomePage() {
               </button>
             </div>
 
-            <div className={styles.services_view_variant}>
+            <div className={`${styles.services_view_variant} ${styles.consultoria}`}>
               <div className={styles.view_name}>
                 <img src="/icons/shadow_blue_dot.png" />
-                <h1>Serviço 01</h1>
+                <h1>Consultoria</h1>
               </div>
             </div>
           </div>
+          </AnimatedElement>
 
-          <div className={styles.services_box}>
-            <div className={styles.services_view}>
+          <AnimatedElement direction="left" delay={0.4}>
+            <div className={styles.services_box}>
+            <div className={`${styles.services_view} ${styles.gestao}`}>
               <div className={styles.view_name}>
                 <img src="/icons/shadow_blue_dot.png" />
-                <h1>Serviço 01</h1>
+                <h1>Gestão de TI</h1>
               </div>
             </div>
 
             <div className={styles.services_text}>
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
-                  laborum accusantium rem quia eaque. Lorem ipsum dolor sit
-                  amet.
+                  Maximize a eficiência e segurança da sua infraestrutura de TI hoje mesmo.
                 </p>
               </div>
 
@@ -116,33 +124,37 @@ export default function HomePage() {
               </button>
             </div>
           </div>
+          </AnimatedElement>
 
-          <div className={styles.services_box}>
+          <AnimatedElement direction="right" delay={0.5}>
+            <div className={styles.services_box}>
             <div className={styles.services_text}>
               <div>
                 <p>
-                  Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
-                  laborum accusantium rem quia eaque. Lorem ipsum dolor sit
-                  amet.
+                  Evite despesas adicionais com a compra de equipamentos novos.
                 </p>
               </div>
 
-              <button>
-                <h1>Saiba Mais</h1>
-                <img src="/icons/arrow.png" />
-              </button>
+              <Link href="/manutencao">
+                <button>
+                  <h1>Saiba Mais</h1>
+                  <img src="/icons/arrow.png" />
+                </button>
+              </Link>
             </div>
 
-            <div className={styles.services_view_variant}>
+            <div className={`${styles.services_view_variant} ${styles.manutencao}`}>
               <div className={styles.view_name}>
                 <img src="/icons/shadow_blue_dot.png" />
-                <h1>Serviço 1</h1>
+                <h1>Manutenção</h1>
               </div>
             </div>
           </div>
+          </AnimatedElement>
         </div>
 
-        <div className={styles.guarantee}>
+        <AnimatedElement direction="up" delay={0.6}>
+          <div className={styles.guarantee}>
           <div>
             <h2>
               A melhor TI <br />
@@ -173,6 +185,7 @@ export default function HomePage() {
             <img src="img/soluctions/man.png" className=" " />
           </div>
         </div>
+        </AnimatedElement>
       </section>
 
       <section className={styles.players}>

@@ -2,6 +2,7 @@
 
 import styles from "./reviewSlider.module.scss";
 import React, { useState, useEffect, useRef } from "react";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 
 const Slider = () => {
   const [checked, setChecked] = useState(1);
@@ -94,29 +95,10 @@ const Slider = () => {
             </div>
 
             <div className={styles.card2}>
-              <video
+              <VideoPlayer
                 src="/videos/depoimento.mp4"
-                controls
-                className="h-[250px] mt-[5px]"
-              ></video>
-
-              <div className="pl-[10px]">
-                <div className="flex items-center text-[10px] gap-[10px] ">
-                  <img
-                    src="/icons/dot_secondary.png"
-                    className="w-[8px] h-[8px]"
-                  />
-                  <p className="text-[10px]">Serviço</p>
-                </div>
-                <h3 className="text-[14px] text-[rgba(0, 34, 176, 1)] font-normal">
-                  Nome Sobrenome
-                </h3>
-                <div className="flex text-[10px] gap-[5px]">
-                  <p>Cargo</p>
-                  <p>|</p>
-                  <p>Empresa</p>
-                </div>
-              </div>
+                className="h-[337px] w-full"
+              />
             </div>
           </div>
 
@@ -140,29 +122,10 @@ const Slider = () => {
               </div>
 
               <div className={styles.card2}>
-                <video
+                <VideoPlayer
                   src="/videos/depoimento.mp4"
-                  controls
-                  className="h-[250px] mt-[5px]"
-                ></video>
-
-                <div className="pl-[10px]">
-                  <div className="flex items-center text-[10px] gap-[10px] ">
-                    <img
-                      src="/icons/dot_secondary.png"
-                      className="w-[8px] h-[8px]"
-                    />
-                    <p className="text-[10px]">Serviço</p>
-                  </div>
-                  <h3 className="text-[14px] text-[rgba(0, 34, 176, 1)] font-normal">
-                    Nome Sobrenome
-                  </h3>
-                  <div className="flex text-[10px] gap-[5px]">
-                    <p>Cargo</p>
-                    <p>|</p>
-                    <p>Empresa</p>
-                  </div>
-                </div>
+                  className="h-[337px] w-full"
+                />
               </div>
             </div>
           ))}

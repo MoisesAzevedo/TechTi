@@ -17,6 +17,62 @@ import {
 import styles from "./navigation.module.scss";
 import DefaultButton from "../Buttons/DefaultButton";
 
+const solutionsItems: { title: string; href: string; description: string }[] = [
+  {
+    title: "Manutenção",
+    href: "/manutencao",
+    description: "Manutenção preventiva e corretiva de equipamentos e sistemas de TI para garantir máximo desempenho."
+  },
+  {
+    title: "Gestão de T.I.",
+    href: "/solucoes/gestao",
+    description: "Gestão completa da infraestrutura de TI, otimizando recursos e processos da sua empresa."
+  },
+  {
+    title: "Infraestrutura",
+    href: "/solucoes/infraestrutura",
+    description: "Implementação e modernização de infraestrutura tecnológica robusta e escalável."
+  },
+  {
+    title: "Consultoria",
+    href: "/solucoes/consultoria",
+    description: "Consultoria especializada em tecnologia para orientar as melhores decisões estratégicas."
+  }
+];
+
+const aboutItems: { title: string; href: string; description: string }[] = [
+  {
+    title: "Nossa História",
+    href: "/sobre/historia",
+    description: "Conheça a trajetória da TechTI e como nos tornamos referência em tecnologia."
+  },
+  {
+    title: "Missão e Valores",
+    href: "/sobre/missao",
+    description: "Nossos princípios e compromissos que guiam cada projeto e relacionamento."
+  },
+  {
+    title: "Equipe",
+    href: "/sobre/equipe",
+    description: "Profissionais especializados e certificados em diversas tecnologias."
+  },
+  {
+    title: "Certificações",
+    href: "/sobre/certificacoes",
+    description: "Reconhecimentos e certificações que garantem a qualidade dos nossos serviços."
+  },
+  {
+    title: "Parceiros",
+    href: "/sobre/parceiros",
+    description: "Empresas e organizações que confiam em nossa expertise tecnológica."
+  },
+  {
+    title: "Carreira",
+    href: "/sobre/carreira",
+    description: "Oportunidades de crescimento profissional em um ambiente inovador."
+  }
+];
+
 const components: { title: string; href: string; description: string }[] = [
   {
     title: "Alert Dialog",
@@ -59,7 +115,9 @@ export function Navigation() {
     <NavigationMenu className={styles.header}>
       {/* exists a div here. Style in styles.header child(1) */}
       <NavigationMenuList className={styles.nav}>
-        <img className={styles.logo} src="./Logotipo.png" />
+        <Link href="/">
+          <img className={styles.logo} src="./logo/favicon.svg" />
+        </Link>
 
         <div className={styles.navigation_container}>
           <NavigationMenuItem className={styles.navigation_item}>
@@ -69,32 +127,39 @@ export function Navigation() {
 
             <NavigationMenuContent className={styles.navigation_content}>
               <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                <li className="row-span-3">
+                <li className="row-span-4">
                   <NavigationMenuLink asChild>
                     <a
-                      className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/"
+                      className="flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md relative overflow-hidden"
+                      href="/solucoes"
+                      style={{
+                        backgroundImage: 'url("/img/backgrounds/escritorio.avif")',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                      }}
                     >
-                      {/*          <Icons.logo className="h-6 w-6" /> */}
-                      <div className="mb-2 mt-4 text-lg font-medium">
-                        shadcn/ui
+                      <div className="absolute inset-0 bg-black/40"></div>
+                      <div className="relative z-10">
+                        <div className="mb-2 mt-4 text-lg font-medium text-white">
+                          TechTI Soluções
+                        </div>
+                        <p className="text-[14px] leading-tight text-white/90">
+                          Soluções completas em tecnologia para impulsionar seu negócio.
+                        </p>
                       </div>
-                      <p className="text-sm leading-tight text-muted-foreground">
-                        Beautifully designed components built with Radix UI and
-                        Tailwind CSS.
-                      </p>
                     </a>
                   </NavigationMenuLink>
                 </li>
-                <ListItem href="/docs" title="Introduction">
-                  Re-usable components built using Radix UI and Tailwind CSS.
-                </ListItem>
-                <ListItem href="/docs/installation" title="Installation">
-                  How to install dependencies and structure your app.
-                </ListItem>
-                <ListItem href="/docs/primitives/typography" title="Typography">
-                  Styles for headings, paragraphs, lists...etc
-                </ListItem>
+                {solutionsItems.map((solution) => (
+                  <ListItem
+                    key={solution.title}
+                    title={solution.title}
+                    href={solution.href}
+                  >
+                    {solution.description}
+                  </ListItem>
+                ))}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
@@ -102,14 +167,14 @@ export function Navigation() {
           <NavigationMenuItem>
             <NavigationMenuTrigger>Quem Somos</NavigationMenuTrigger>
             <NavigationMenuContent className={styles.navigation_content}>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                {aboutItems.map((item) => (
                   <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
+                    key={item.title}
+                    title={item.title}
+                    href={item.href}
                   >
-                    {component.description}
+                    {item.description}
                   </ListItem>
                 ))}
               </ul>
@@ -149,8 +214,8 @@ const ListItem = React.forwardRef<
           )}
           {...props}
         >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+          <div className="text-[14px] font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-[14px] leading-snug text-muted-foreground">
             {children}
           </p>
         </a>

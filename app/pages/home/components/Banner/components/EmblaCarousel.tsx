@@ -25,9 +25,9 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
 
   // Array das imagens do banner
   const bannerImages = [
-    "/img/banner/futuro.avif",
+    "/img/banner/suporte.avif",
     "/img/banner/soluçoes.avif",
-    "/img/banner/suporte.avif"
+    "/img/banner/futuro.avif"
   ];
 
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [

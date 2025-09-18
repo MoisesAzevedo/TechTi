@@ -1,0 +1,306 @@
+.hero {
+  position: relative;
+  height: 700px;
+  padding: 80px 20px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0f1729; // Fallback color
+  font-family: "OpenSauceOne", system-ui, sans-serif;
+  
+  // CSS Variables
+  --section-corvid-background-color: rgb(0 26 255 / 45%);
+  --bg-overlay-color: rgb(0 26 255 / 45%);
+}
+
+.videoBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.blueFilter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--section-corvid-background-color, var(--bg-overlay-color));
+  opacity: 1;
+  z-index: 2;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 41, 0.5);
+  z-index: 2;
+}
+
+.heroContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  padding: 0 20px;
+  
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+    padding: 0 40px;
+  }
+  
+  @media (max-width: 600px) {
+    padding: 0 20px;
+    gap: 30px;
+  }
+}
+
+.heroContent {
+  color: white;
+  font-family: "OpenSauceOne", system-ui, sans-serif;
+  
+  h1 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    font-family: "OpenSauceOne", system-ui, sans-serif;
+    color: white;
+    
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 400px;
+    font-family: "OpenSauceOne", system-ui, sans-serif;
+    font-weight: normal;
+    color: white;
+    
+    @media (max-width: 968px) {
+      max-width: none;
+    }
+  }
+}
+
+.logoSection {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  
+  @media (max-width: 968px) {
+    justify-content: center;
+  }
+  
+  @media (max-width: 640px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.logoItem {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  opacity: 0.8;
+  font-family: "OpenSauceOne", system-ui, sans-serif;
+  
+  &:nth-child(2) {
+    opacity: 0.6;
+  }
+  
+  &:nth-child(3) {
+    opacity: 0.4;
+  }
+}
+
+.formSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  z-index: 3;
+}
+
+.contactForm {
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  width: 100%;
+  max-width: 530px;
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  
+  @media (max-width: 600px) {
+    max-width: 100%;
+  }
+}
+
+.formRow {
+  display: flex;
+  gap: 17px;
+  
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 19px;
+  }
+}
+
+.formInput {
+  width: 256px !important;
+  height: 49px !important;
+  padding: 0 16px !important;
+  border: none !important;
+  border-radius: 5px !important;
+  font-size: 16px !important;
+  font-family: "OpenSauceOne", system-ui, sans-serif !important;
+  font-weight: normal !important;
+  background: white !important;
+  flex-shrink: 0;
+  flex: 1;
+  min-width: 200px;
+  box-sizing: border-box !important;
+  min-height: 49px !important;
+  max-height: 49px !important;
+  line-height: normal !important;
+  
+  &:focus {
+    outline: none;
+  }
+  
+  &::placeholder {
+    color: #9A9A9A;
+    font-family: "OpenSauceOne", system-ui, sans-serif;
+  }
+  
+  @media (max-width: 600px) {
+    width: 100%;
+    min-width: unset;
+    flex: unset;
+  }
+  
+  &.fullWidth {
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    height: 49px !important;
+    box-sizing: border-box !important;
+    padding: 0 16px !important;
+    min-height: 49px !important;
+    max-height: 49px !important;
+  }
+}
+
+// Container para o input number com seta customizada
+.numberInputContainer {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-width: 200px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 8px solid #9A9A9A;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  @media (max-width: 600px) {
+    min-width: unset;
+    width: 100%;
+  }
+}
+
+.select {
+  background: white;
+  cursor: pointer;
+  color: #9A9A9A;
+  font-family: "OpenSauceOne", system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  height: 49px;
+  border: none;
+  border-radius: 5px;
+  padding: 0 16px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  
+  &:focus {
+    outline: none;
+    color: #000;
+  }
+  
+  &:valid {
+    color: #000;
+  }
+  
+  option {
+    padding: 8px;
+    color: #000;
+    font-family: "OpenSauceOne", system-ui, sans-serif;
+    
+    &:first-child {
+      color: #9A9A9A;
+    }
+  }
+}
+
+.submitButton {
+  background: #0022B0;
+  color: white;
+  border: none;
+  border-radius: 21.5px;
+  width: 137px;
+  height: 39px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "OpenSauceOne", system-ui, sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: #5AFF60;
+    color: black;
+  }
+}

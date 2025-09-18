@@ -6,8 +6,11 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
+import useCases from "./DefaultCarouselFeature/useCases";
 
 const DefaultCarousel = () => {
+  const cases = useCases();
+
   return (
     <Carousel
       opts={{
@@ -15,12 +18,12 @@ const DefaultCarousel = () => {
       }}
     >
       <CarouselContent className="max-w-full  ">
-        {Array.from({ length: 12 }).map((_, index) => (
-          <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4  ">
+        {cases.map((c) => (
+          <CarouselItem key={c.id} className="md:basis-1/2 lg:basis-1/4  ">
             <div className="p-1">
               <Card className="  border-none shadow-[0px_4px_10px_0px_rgba(0,0,0,0.1)] bg-[#ffffff]">
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[199px] h-[112px]  ">
-                  <span className="text-3xl font-semibold">{index + 1}</span>
+                  <img src={c.src} alt={c.alt ?? c.id} className="max-w-[90%] max-h-[80%] object-contain" />
                 </CardContent>
               </Card>
             </div>

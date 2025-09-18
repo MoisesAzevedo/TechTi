@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
   ];
 
   const solutionLinks = [
-    { text: "Manutenção", href: "/solucoes/manutencao" },
+    { text: "Manutenção", href: "/manutencao" },
     { text: "Consultoria", href: "/solucoes/consultoria" },
     { text: "Infraestrutura", href: "/solucoes/infraestrutura" },
     { text: "Gestão de T.I.", href: "/solucoes/gestao" },
