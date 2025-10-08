@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import styles from "./navigation.module.scss";
 import DefaultButton from "../Buttons/DefaultButton";
+import { Button } from "@/components/ui/button";
 
 const solutionsItems: { title: string; href: string; description: string }[] = [
   {
@@ -191,7 +192,21 @@ export function Navigation() {
         </div>
 
         <div className={styles.buttons}>
-          <DefaultButton value="Blog" />
+          <Button
+            asChild
+            variant="outline"
+            className={
+              "bg-[#CCD6FF] border-none hover:bg-primary hover:shadow-[0_0_6px_#5AFF60]  w-[137px] h-[39px] text-[#030B4D] text-[16px] font-bold"
+            }
+          >
+            <a
+              href="https://blog.techti.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Blog
+            </a>
+          </Button>
           <DefaultButton value="Suporte" />
         </div>
       </NavigationMenuList>

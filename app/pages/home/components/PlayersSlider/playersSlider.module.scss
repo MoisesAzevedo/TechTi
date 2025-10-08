@@ -40,21 +40,10 @@ section.players {
 
       .players_slide_box {
         display: flex;
-        gap: 20px;
+        align-items: center;
+        justify-content: center;
 
         transition: 1s;
-      }
-
-      .players_card1 {
-        width: 155px;
-        height: 179px;
-
-        display: flex;
-        flex-direction: column;
-        padding-left: 25px;
-        gap: 10px;
-
-        background-image: linear-gradient(320deg, #ccd6ff80, #ccd6ffe6);
       }
     }
   }

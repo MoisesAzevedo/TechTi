@@ -1,22 +1,29 @@
 "use client";
 
 import styles from "./pLayersSlider.module.scss";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
+import PlayerCard from "./PlayerCard";
 
 const PlayersSlider = () => {
   const [playersChecked, setPlayersChecked] = useState(1);
+
+  // Lista de logos localizada em public/cases/players
   const playersCards = [
-    { name: "one" },
-    { name: "two" },
-    { name: "three" },
-    { name: "for" },
-    { name: "five" }
+    // Top 7 mais relevantes no Brasil para este assunto
+    { src: "/cases/players/hp-seeklogo.png", alt: "hp" },
+    { src: "/cases/players/Cisco_logo.png", alt: "cisco" },
+        { src: "/cases/players/Microsoft_Azure_Logo.png", alt: "microsoft-azure" },
+    { src: "/cases/players/Fortinet_logo.png", alt: "fortinet" },
+    { src: "/cases/players/dell-seeklogo.png", alt: "dell" },
+
+    { src: "/cases/players/lenovo-seeklogo.png", alt: "lenovo" },
+    { src: "/cases/players/Schneider_Electric_2007.png", alt: "schneider" }
   ];
 
   return (
     <section className={styles.players}>
       {/*   //invisible radios to css manipulation */}
-      <div className={styles.players_slider_container}>
+  <div className={styles.players_slider_container} data-name="players-slider-container">
         <input
           type="radio"
           name="players-btn-radio-review"
@@ -60,19 +67,11 @@ const PlayersSlider = () => {
         />
 
         {/*  //cards */}
-        <section className={styles.players_card_area}>
-          <div className={styles.slider_items}>
-            <div className={styles.players_first}>
-              <div className={styles.players_card1}>
-                <div>hello</div>
-              </div>
-            </div>
-
-            {playersCards.map((arr, index) => (
-              <div className={styles.players_slide_box}>
-                <div className={styles.players_card1}>
-                  <div>{arr.name}</div>
-                </div>
+        <section className={styles.players_card_area} data-name="players-card-area">
+          <div className={styles.slider_items} data-name="players-slider-items">
+            {playersCards.map((card, index) => (
+              <div className={styles.players_slide_box} key={card.alt} data-name={`players-slide-box-${index}`}>
+                <PlayerCard src={card.src} alt={card.alt} />
               </div>
             ))}
           </div>
