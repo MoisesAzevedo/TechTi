@@ -75,6 +75,20 @@ h2 {
   --blue: #1745ff;
   /* animations */
   --hover-transition: 0.2s ease-in-out;
+  /* main container widths */
+  --main-container-desktop: 1193.9px;
+  --main-container-tablet: 900px;
+  --main-container-phone: 375px;
+  /* breakpoints (screens) */
+  --screen-xs: 350px;
+  --screen-phone: 480px;
+  --screen-bp700: 700px;
+  --screen-tablet: 768px;
+  --screen-desktop: 1024px;
+  --screen-lg: 1050px;
+  --screen-wide: 1250px;
+  --screen-xl: 1280px;
+  --screen-2xl: 1536px;
 }
 
 @layer base {
@@ -156,5 +170,22 @@ h2 {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Fade-in animation variables and keyframes (used by component CSS modules) */
+:root {
+  --fade-duration: 1s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

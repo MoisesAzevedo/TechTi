@@ -1,13 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
 interface UseScrollAnimationOptions {
   initialHidden?: boolean;
   threshold?: number;
 }
 
-export const useScrollAnimation = ({ 
-  initialHidden = false, 
-  threshold = 0.2 
+export const useScrollAnimation = ({
+  initialHidden = false,
+  threshold = 0.2,
 }: UseScrollAnimationOptions = {}) => {
   const [visible, setVisible] = useState(!initialHidden);
   const elRef = useRef<HTMLElement | null>(null);
@@ -23,7 +23,11 @@ export const useScrollAnimation = ({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setVisible(true);
-            obs.unobserve(entry.target);
+            try {
+              obs.unobserve(entry.target);
+            } catch (e) {
+              /* ignore */
+            }
           }
         });
       },

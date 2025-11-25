@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import React, { useRef, useState, useCallback, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { MouseShadowEffectProps } from './interfaces/MousePosition';
-import styles from './MouseShadowEffect.module.scss';
+import React, { useRef, useState, useCallback, useEffect } from "react";
+import { motion } from "framer-motion";
+import { MouseShadowEffectProps } from "./interfaces/MousePosition";
+import styles from "./MouseShadowEffect.module.scss";
 
 const MouseShadowEffect: React.FC<MouseShadowEffectProps> = ({
-  className = '',
-  effectImage = '/effects/blue-light.png',
+  className = "",
+  effectImage = "/effects/blue-light.png",
   size = 400,
   opacity = 1.0,
   blur = 30,
@@ -17,30 +17,37 @@ const MouseShadowEffect: React.FC<MouseShadowEffectProps> = ({
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handlePointerMove = (e: PointerEvent) => {
       const container = containerRef.current;
       if (!container) return;
 
       const rect = container.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
 
-      // Verifica se o mouse está dentro da área da seção
-      const isInside = x >= 0 && x <= rect.width && y >= 0 && y <= rect.height;
-
-      if (isInside) {
-        setMousePosition({ x, y });
-        setIsHovering(true);
-      } else {
+      // Se o container não tiver dimensão, não processa
+      if (rect.width === 0 || rect.height === 0) {
         setIsHovering(false);
+        return;
       }
+
+      // Calcula posição relativa e garante que esteja dentro dos limites
+      const rawX = e.clientX - rect.left;
+      const rawY = e.clientY - rect.top;
+
+      const x = Math.min(Math.max(0, rawX), rect.width);
+      const y = Math.min(Math.max(0, rawY), rect.height);
+
+      const isInside =
+        rawX >= 0 && rawX <= rect.width && rawY >= 0 && rawY <= rect.height;
+
+      setMousePosition({ x, y });
+      setIsHovering(isInside);
     };
 
-    // Adiciona event listener global no document
-    document.addEventListener('mousemove', handleMouseMove);
+    // Usa pointermove no window (melhor compatibilidade com touch/pointer)
+    window.addEventListener("pointermove", handlePointerMove);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("pointermove", handlePointerMove);
       setIsHovering(false);
       setMousePosition({ x: 0, y: 0 });
     };
@@ -55,8 +62,8 @@ const MouseShadowEffect: React.FC<MouseShadowEffectProps> = ({
       <motion.div
         className={styles.lightEffect}
         animate={{
-          left: mousePosition.x - size / 2,
-          top: mousePosition.y - size / 2,
+          x: mousePosition.x - size / 2,
+          y: mousePosition.y - size / 2,
           opacity: isHovering ? opacity : 0,
           scale: isHovering ? 1 : 0.8,
         }}
@@ -67,10 +74,10 @@ const MouseShadowEffect: React.FC<MouseShadowEffectProps> = ({
           filter: `blur(${blur}px)`,
         }}
         transition={{
-          left: { type: "spring", stiffness: 50, damping: 25, mass: 0.8 },
-          top: { type: "spring", stiffness: 50, damping: 25, mass: 0.8 },
+          x: { type: "spring", stiffness: 50, damping: 25, mass: 0.8 },
+          y: { type: "spring", stiffness: 50, damping: 25, mass: 0.8 },
           opacity: { duration: 0.3 },
-          scale: { duration: 0.4 }
+          scale: { duration: 0.4 },
         }}
         initial={{ opacity: 0, scale: 0.8 }}
       />

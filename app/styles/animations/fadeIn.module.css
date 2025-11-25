@@ -1,0 +1,27 @@
+.fadeIn {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--fade-duration) ease-out,
+    transform var(--fade-duration) ease-out;
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animateFadeIn {
+  animation: fadeInUp var(--fade-duration) ease-out forwards;
+}
+
+/* Force visible styles for children (useful when child has utility classes like `opacity-0`) */
+.animateFadeIn :global(article) {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Utility class to force visibility on the wrapper itself */
+.forceVisible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

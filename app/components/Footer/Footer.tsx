@@ -32,20 +32,14 @@ const Footer: React.FC = () => {
           alt="TechTI Logo"
           width={150}
           height={60}
-          className="object-contain"
-          style={{ color: 'transparent' }}
+          className="object-contain w-auto"
+          style={{ color: "transparent", width: "auto" }}
         />
         <div className="mt-4 flex flex-col gap-3 text-[14px] text-white/90">
-          <Link 
-            href="telefone" 
-            className="hover:text-white transition-colors"
-          >
+          <Link href="telefone" className="hover:text-white transition-colors">
             Contato:&nbsp;+55 (11) 95232-4566
           </Link>
-          <Link 
-            href="email" 
-            className="hover:text-white transition-colors"
-          >
+          <Link href="email" className="hover:text-white transition-colors">
             contato@techtitecnologia.com.br
           </Link>
         </div>
@@ -112,7 +106,11 @@ const Footer: React.FC = () => {
 
       {/* Social Media Icons Section */}
       <div className="absolute top-[268px] right-[80px] flex gap-[18px]">
-        <Link href="https://www.facebook.com/techti.tecnologiaofc" target="_blank" className="hover:opacity-80 transition-opacity">
+        <Link
+          href="https://www.facebook.com/techti.tecnologiaofc"
+          target="_blank"
+          className="hover:opacity-80 transition-opacity"
+        >
           <Image
             src="/icons/footer/facebook.svg"
             alt="Facebook"
@@ -121,7 +119,11 @@ const Footer: React.FC = () => {
             className="object-contain"
           />
         </Link>
-        <Link href="https://www.instagram.com/techti_tecnologiaofc/" target="_blank" className="hover:opacity-80 transition-opacity">
+        <Link
+          href="https://www.instagram.com/techti_tecnologiaofc/"
+          target="_blank"
+          className="hover:opacity-80 transition-opacity"
+        >
           <Image
             src="/icons/footer/instagram.svg"
             alt="Instagram"
@@ -130,7 +132,11 @@ const Footer: React.FC = () => {
             className="object-contain"
           />
         </Link>
-        <Link href="https://x.com/techtisolucoes" target="_blank" className="hover:opacity-80 transition-opacity">
+        <Link
+          href="https://x.com/techtisolucoes"
+          target="_blank"
+          className="hover:opacity-80 transition-opacity"
+        >
           <Image
             src="/icons/footer/twitter.svg"
             alt="Twitter"
@@ -139,7 +145,11 @@ const Footer: React.FC = () => {
             className="object-contain"
           />
         </Link>
-        <Link href="https://www.linkedin.com/company/techti-tecnologia" target="_blank" className="hover:opacity-80 transition-opacity">
+        <Link
+          href="https://www.linkedin.com/company/techti-tecnologia"
+          target="_blank"
+          className="hover:opacity-80 transition-opacity"
+        >
           <Image
             src="/icons/footer/linkedin.svg"
             alt="LinkedIn"
