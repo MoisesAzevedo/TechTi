@@ -12,7 +12,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import styles from "./navigation.module.scss";
 import DefaultButton from "../Buttons/DefaultButton";
@@ -22,56 +22,66 @@ const solutionsItems: { title: string; href: string; description: string }[] = [
   {
     title: "Manutenção",
     href: "/manutencao",
-    description: "Manutenção preventiva e corretiva de equipamentos e sistemas de TI para garantir máximo desempenho."
+    description:
+      "Manutenção preventiva e corretiva de equipamentos e sistemas de TI para garantir máximo desempenho.",
   },
   {
     title: "Gestão de T.I.",
-    href: "/solucoes/gestao",
-    description: "Gestão completa da infraestrutura de TI, otimizando recursos e processos da sua empresa."
+    href: "/gestao",
+    description:
+      "Gestão completa da infraestrutura de TI, otimizando recursos e processos da sua empresa.",
   },
   {
     title: "Infraestrutura",
-    href: "/solucoes/infraestrutura",
-    description: "Implementação e modernização de infraestrutura tecnológica robusta e escalável."
+    href: "/infraestrutura",
+    description:
+      "Implementação e modernização de infraestrutura tecnológica robusta e escalável.",
   },
   {
     title: "Consultoria",
-    href: "/solucoes/consultoria",
-    description: "Consultoria especializada em tecnologia para orientar as melhores decisões estratégicas."
-  }
+    href: "/consultoria",
+    description:
+      "Consultoria especializada em tecnologia para orientar as melhores decisões estratégicas.",
+  },
 ];
 
 const aboutItems: { title: string; href: string; description: string }[] = [
   {
     title: "Nossa História",
     href: "/sobre/historia",
-    description: "Conheça a trajetória da TechTI e como nos tornamos referência em tecnologia."
+    description:
+      "Conheça a trajetória da TechTI e como nos tornamos referência em tecnologia.",
   },
   {
     title: "Missão e Valores",
     href: "/sobre/missao",
-    description: "Nossos princípios e compromissos que guiam cada projeto e relacionamento."
+    description:
+      "Nossos princípios e compromissos que guiam cada projeto e relacionamento.",
   },
   {
     title: "Equipe",
     href: "/sobre/equipe",
-    description: "Profissionais especializados e certificados em diversas tecnologias."
+    description:
+      "Profissionais especializados e certificados em diversas tecnologias.",
   },
   {
     title: "Certificações",
     href: "/sobre/certificacoes",
-    description: "Reconhecimentos e certificações que garantem a qualidade dos nossos serviços."
+    description:
+      "Reconhecimentos e certificações que garantem a qualidade dos nossos serviços.",
   },
   {
     title: "Parceiros",
     href: "/sobre/parceiros",
-    description: "Empresas e organizações que confiam em nossa expertise tecnológica."
+    description:
+      "Empresas e organizações que confiam em nossa expertise tecnológica.",
   },
   {
     title: "Carreira",
     href: "/sobre/carreira",
-    description: "Oportunidades de crescimento profissional em um ambiente inovador."
-  }
+    description:
+      "Oportunidades de crescimento profissional em um ambiente inovador.",
+  },
 ];
 
 const components: { title: string; href: string; description: string }[] = [
@@ -79,36 +89,37 @@ const components: { title: string; href: string; description: string }[] = [
     title: "Alert Dialog",
     href: "/docs/primitives/alert-dialog",
     description:
-      "A modal dialog that interrupts the user with important content and expects a response."
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
     title: "Hover Card",
     href: "/docs/primitives/hover-card",
-    description: "For sighted users to preview content available behind a link."
+    description:
+      "For sighted users to preview content available behind a link.",
   },
   {
     title: "Progress",
     href: "/docs/primitives/progress",
     description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar."
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Scroll-area",
     href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content."
+    description: "Visually or semantically separates content.",
   },
   {
     title: "Tabs",
     href: "/docs/primitives/tabs",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time."
+      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
   },
   {
     title: "Tooltip",
     href: "/docs/primitives/tooltip",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it."
-  }
+      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+  },
 ];
 
 export function Navigation() {
@@ -134,10 +145,11 @@ export function Navigation() {
                       className="flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md relative overflow-hidden"
                       href="/solucoes"
                       style={{
-                        backgroundImage: 'url("/img/backgrounds/escritorio.avif")',
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat'
+                        backgroundImage:
+                          'url("/img/backgrounds/escritorio.avif")',
+                        backgroundSize: "cover",
+                        backgroundPosition: "center",
+                        backgroundRepeat: "no-repeat",
                       }}
                     >
                       <div className="absolute inset-0 bg-black/40"></div>
@@ -146,7 +158,8 @@ export function Navigation() {
                           TechTI Soluções
                         </div>
                         <p className="text-[14px] leading-tight text-white/90">
-                          Soluções completas em tecnologia para impulsionar seu negócio.
+                          Soluções completas em tecnologia para impulsionar seu
+                          negócio.
                         </p>
                       </div>
                     </a>

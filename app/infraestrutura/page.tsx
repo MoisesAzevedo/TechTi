@@ -4,15 +4,15 @@ import styles from "./page.module.scss";
 import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
 import { PhoneInput } from "@/components/Inputs";
-import { Beneficios } from "./components";
-import Carrousel from "./components/carrousel/Carrousel";
+import { Beneficios } from "../manutencao/components";
+import Carrousel from "../manutencao/components/carrousel/Carrousel";
 import React, { useState } from "react";
 import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
-import { faqItems } from "./components/utils/faqItems";
+import { faqItems } from "../manutencao/components/utils/faqItems";
 
-export default function ManutencaoPage() {
+export default function InfraestruturaPage() {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
@@ -26,10 +26,10 @@ export default function ManutencaoPage() {
 
   return (
     <div
-      data-name="manutencao-page-root"
+      data-name="infraestrutura-page-root"
       className="flex flex-col justify-center items-center w-full mb-40"
     >
-      <section data-name="manutencao-hero" className={styles.hero}>
+      <section data-name="infraestrutura-hero" className={styles.hero}>
         <div
           data-name="manutencao-videoBackground"
           className={styles.videoBackground}
@@ -65,7 +65,7 @@ export default function ManutencaoPage() {
             data-name="manutencao-heroContent"
             className={styles.heroContent}
           >
-            <h1 data-name="manutencao-hero-title">Manutenção</h1>
+            <h1 data-name="manutencao-hero-title">Infraestrutura</h1>
             <p data-name="manutencao-hero-description">
               Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
               laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet.
@@ -167,26 +167,6 @@ export default function ManutencaoPage() {
             </form>
           </div>
         </div>
-      </section>
-
-      <section
-        data-name="manutencao-content-section-cards"
-        className="mb-60 relative w-full bg-[#030B4D] "
-      >
-        <MouseShadowEffect
-          effectImage="/effects/blue-light.png"
-          size={2000}
-          opacity={0.95}
-          blur={20}
-          className="absolute inset-0 pointer-events-none"
-        />
-        <article
-          data-name="manutencao-main-container"
-          className="max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto"
-        >
-          <Beneficios />
-          <Carrousel />
-        </article>
       </section>
 
       <section

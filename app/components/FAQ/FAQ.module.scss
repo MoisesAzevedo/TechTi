@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  max-width: 658px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.item {
+  border-bottom: 1px solid #bfbfbf;
+  background: transparent;
+  transition: background 240ms ease-in-out, box-shadow 240ms ease-in-out,
+    border-color 240ms ease-in-out;
+}
+
+.questionButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 20px;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.questionText {
+  color: #bfbfbf;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 240ms ease-in-out;
+}
+
+.icon {
+  color: #bfbfbf;
+  margin-left: 12px;
+  font-size: 30px;
+  transition: color 240ms ease-in-out;
+}
+
+/* Open state styles */
+.itemOpen {
+  background: #fff;
+  /* keep border-bottom but make it transparent so it can transition smoothly */
+  border-bottom-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: background 240ms ease-in-out, box-shadow 240ms ease-in-out,
+    border-bottom-color 240ms ease-in-out, border-radius 240ms ease-in-out;
+  overflow: hidden;
+}
+
+.itemOpen .questionText {
+  color: #666666;
+}
+
+.itemOpen .icon {
+  color: #666666;
+}
+
+.answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 240ms ease-in-out, padding 240ms ease-in-out;
+  background: transparent;
+  font-weight: 700;
+  color: #979797;
+}
+
+.answerInner {
+  padding: 20px;
+  padding-top: 0;
+}
+
+/* Make paragraphs inside the answer inner bold and in the requested color */
+.answerInner p {
+  font-weight: 700;
+  color: #979797;
+}
+
+.open {
+  max-height: 800px; /* suficiente para a maioria das respostas */
+}
+
+/* Overrides for the first FAQ item using class selectors */
+.item:first-child .answer {
+  background: transparent;
+}

@@ -4,15 +4,15 @@ import styles from "./page.module.scss";
 import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
 import { PhoneInput } from "@/components/Inputs";
-import { Beneficios } from "./components";
-import Carrousel from "./components/carrousel/Carrousel";
+import { Beneficios } from "../manutencao/components";
+import Carrousel from "../manutencao/components/carrousel/Carrousel";
 import React, { useState } from "react";
 import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
-import { faqItems } from "./components/utils/faqItems";
+import { faqItems } from "../manutencao/components/utils/faqItems";
 
-export default function ManutencaoPage() {
+export default function ConsultoriaPage() {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
@@ -26,16 +26,16 @@ export default function ManutencaoPage() {
 
   return (
     <div
-      data-name="manutencao-page-root"
+      data-name="consultoria-page-root"
       className="flex flex-col justify-center items-center w-full mb-40"
     >
-      <section data-name="manutencao-hero" className={styles.hero}>
+      <section data-name="consultoria-hero" className={styles.hero}>
         <div
-          data-name="manutencao-videoBackground"
+          data-name=" consultoria-videoBackground"
           className={styles.videoBackground}
         >
           <video
-            data-name="manutencao-background-video"
+            data-name=" consultoria-background-video"
             className={styles.backgroundVideo}
             autoPlay
             muted
@@ -49,55 +49,67 @@ export default function ManutencaoPage() {
         </div>
 
         <div
-          data-name="manutencao-blueFilter"
+          data-name=" consultoria-blueFilter"
           className={styles.blueFilter}
         ></div>
         <div
-          data-name="manutencao-videoOverlay"
+          data-name=" consultoria-videoOverlay"
           className={styles.videoOverlay}
         ></div>
 
         <div
-          data-name="manutencao-heroContainer"
+          data-name=" consultoria-heroContainer"
           className={styles.heroContainer}
         >
           <div
-            data-name="manutencao-heroContent"
+            data-name=" consultoria-heroContent"
             className={styles.heroContent}
           >
-            <h1 data-name="manutencao-hero-title">Manutenção</h1>
-            <p data-name="manutencao-hero-description">
+            <h1 data-name=" consultoria-hero-title">Consultoria</h1>
+            <p data-name=" consultoria-hero-description">
               Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
               laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet.
             </p>
             <ServiceButton text="Lorem Ipsum" />
 
             <div
-              data-name="manutencao-logoSection"
+              data-name=" consultoria-logoSection"
               className={styles.logoSection}
             >
-              <div data-name="manutencao-logoItem" className={styles.logoItem}>
+              <div
+                data-name=" consultoria-logoItem"
+                className={styles.logoItem}
+              >
                 LOGO
               </div>
-              <div data-name="manutencao-logoItem" className={styles.logoItem}>
+              <div
+                data-name=" consultoria-logoItem"
+                className={styles.logoItem}
+              >
                 LOGO
               </div>
-              <div data-name="manutencao-logoItem" className={styles.logoItem}>
+              <div
+                data-name=" consultoria-logoItem"
+                className={styles.logoItem}
+              >
                 LOGO
               </div>
             </div>
           </div>
 
           <div
-            data-name="manutencao-formSection"
+            data-name=" consultoria-formSection"
             className={styles.formSection}
           >
             <form
-              data-name="manutencao-contactForm"
+              data-name=" consultoria-contactForm"
               className={styles.contactForm}
               onSubmit={handleSubmit}
             >
-              <div data-name="manutencao-formRow-1" className={styles.formRow}>
+              <div
+                data-name=" consultoria-formRow-1"
+                className={styles.formRow}
+              >
                 <input
                   data-name="input-nome"
                   type="text"
@@ -126,7 +138,10 @@ export default function ManutencaoPage() {
                 className={`${styles.formInput} ${styles.fullWidth}`}
               />
 
-              <div data-name="manutencao-formRow-2" className={styles.formRow}>
+              <div
+                data-name=" consultoria-formRow-2"
+                className={styles.formRow}
+              >
                 <input
                   data-name="input-empresa"
                   type="text"
@@ -137,7 +152,7 @@ export default function ManutencaoPage() {
                   className={styles.formInput}
                 />
                 <div
-                  data-name="manutencao-numberInputContainer"
+                  data-name=" consultoria-numberInputContainer"
                   className={styles.numberInputContainer}
                 >
                   <select
@@ -170,7 +185,7 @@ export default function ManutencaoPage() {
       </section>
 
       <section
-        data-name="manutencao-content-section-cards"
+        data-name=" consultoria-content-section-cards"
         className="mb-60 relative w-full bg-[#030B4D] "
       >
         <MouseShadowEffect
@@ -181,16 +196,15 @@ export default function ManutencaoPage() {
           className="absolute inset-0 pointer-events-none"
         />
         <article
-          data-name="manutencao-main-container"
+          data-name=" consultoria-main-container"
           className="max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto"
         >
           <Beneficios />
-          <Carrousel />
         </article>
       </section>
 
       <section
-        data-name="manutencao-content"
+        data-name=" consultoria-content"
         className="flex flex-col items-center gap-[60px]"
       >
         <div data-name="faq-button-wrapper" className="  flex justify-center">

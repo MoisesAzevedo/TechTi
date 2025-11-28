@@ -4,15 +4,14 @@ import styles from "./page.module.scss";
 import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
 import { PhoneInput } from "@/components/Inputs";
-import { Beneficios } from "./components";
-import Carrousel from "./components/carrousel/Carrousel";
+
 import React, { useState } from "react";
-import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
+
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
-import { faqItems } from "./components/utils/faqItems";
+import { faqItems } from "../manutencao/components/utils/faqItems";
 
-export default function ManutencaoPage() {
+export default function GestaoPage() {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
@@ -26,16 +25,16 @@ export default function ManutencaoPage() {
 
   return (
     <div
-      data-name="manutencao-page-root"
+      data-name="gestao-page-root"
       className="flex flex-col justify-center items-center w-full mb-40"
     >
-      <section data-name="manutencao-hero" className={styles.hero}>
+      <section data-name="gestao-hero" className={styles.hero}>
         <div
-          data-name="manutencao-videoBackground"
+          data-name=" gestao-videoBackground"
           className={styles.videoBackground}
         >
           <video
-            data-name="manutencao-background-video"
+            data-name=" gestao-background-video"
             className={styles.backgroundVideo}
             autoPlay
             muted
@@ -48,56 +47,41 @@ export default function ManutencaoPage() {
           </video>
         </div>
 
+        <div data-name=" gestao-blueFilter" className={styles.blueFilter}></div>
         <div
-          data-name="manutencao-blueFilter"
-          className={styles.blueFilter}
-        ></div>
-        <div
-          data-name="manutencao-videoOverlay"
+          data-name=" gestao-videoOverlay"
           className={styles.videoOverlay}
         ></div>
 
-        <div
-          data-name="manutencao-heroContainer"
-          className={styles.heroContainer}
-        >
-          <div
-            data-name="manutencao-heroContent"
-            className={styles.heroContent}
-          >
-            <h1 data-name="manutencao-hero-title">Manutenção</h1>
-            <p data-name="manutencao-hero-description">
+        <div data-name=" gestao-heroContainer" className={styles.heroContainer}>
+          <div data-name=" gestao-heroContent" className={styles.heroContent}>
+            <h1 data-name=" gestao-hero-title">Gestão</h1>
+            <p data-name=" gestao-hero-description">
               Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
               laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet.
             </p>
             <ServiceButton text="Lorem Ipsum" />
 
-            <div
-              data-name="manutencao-logoSection"
-              className={styles.logoSection}
-            >
-              <div data-name="manutencao-logoItem" className={styles.logoItem}>
+            <div data-name=" gestao-logoSection" className={styles.logoSection}>
+              <div data-name=" gestao-logoItem" className={styles.logoItem}>
                 LOGO
               </div>
-              <div data-name="manutencao-logoItem" className={styles.logoItem}>
+              <div data-name=" gestao-logoItem" className={styles.logoItem}>
                 LOGO
               </div>
-              <div data-name="manutencao-logoItem" className={styles.logoItem}>
+              <div data-name=" gestao-logoItem" className={styles.logoItem}>
                 LOGO
               </div>
             </div>
           </div>
 
-          <div
-            data-name="manutencao-formSection"
-            className={styles.formSection}
-          >
+          <div data-name=" gestao-formSection" className={styles.formSection}>
             <form
-              data-name="manutencao-contactForm"
+              data-name=" gestao-contactForm"
               className={styles.contactForm}
               onSubmit={handleSubmit}
             >
-              <div data-name="manutencao-formRow-1" className={styles.formRow}>
+              <div data-name=" gestao-formRow-1" className={styles.formRow}>
                 <input
                   data-name="input-nome"
                   type="text"
@@ -126,7 +110,7 @@ export default function ManutencaoPage() {
                 className={`${styles.formInput} ${styles.fullWidth}`}
               />
 
-              <div data-name="manutencao-formRow-2" className={styles.formRow}>
+              <div data-name=" gestao-formRow-2" className={styles.formRow}>
                 <input
                   data-name="input-empresa"
                   type="text"
@@ -137,7 +121,7 @@ export default function ManutencaoPage() {
                   className={styles.formInput}
                 />
                 <div
-                  data-name="manutencao-numberInputContainer"
+                  data-name=" gestao-numberInputContainer"
                   className={styles.numberInputContainer}
                 >
                   <select
@@ -170,27 +154,7 @@ export default function ManutencaoPage() {
       </section>
 
       <section
-        data-name="manutencao-content-section-cards"
-        className="mb-60 relative w-full bg-[#030B4D] "
-      >
-        <MouseShadowEffect
-          effectImage="/effects/blue-light.png"
-          size={2000}
-          opacity={0.95}
-          blur={20}
-          className="absolute inset-0 pointer-events-none"
-        />
-        <article
-          data-name="manutencao-main-container"
-          className="max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto"
-        >
-          <Beneficios />
-          <Carrousel />
-        </article>
-      </section>
-
-      <section
-        data-name="manutencao-content"
+        data-name="faq-content"
         className="flex flex-col items-center gap-[60px]"
       >
         <div data-name="faq-button-wrapper" className="  flex justify-center">

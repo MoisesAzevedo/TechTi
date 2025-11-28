@@ -1,0 +1,42 @@
+.gradientText {
+  display: block;
+  /* evita corte do texto em containers com overflow */
+  overflow: visible;
+  /* pequena folga para não ficar cortado pelo container */
+  padding-top: 4px;
+
+  /* Variáveis para facilitar ajustes via classe ou sobrescrita */
+  --gt-font-size: 28px;
+  --gt-line-height: 1.05;
+
+  line-height: var(--gt-line-height);
+
+  background: linear-gradient(91.03deg, #030b4d 0.88%, #071ab3 99.86%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  font-weight: 700;
+  /* Valores convenientes para títulos; pode ser sobrescrito via prop `size`, inline `style` ou classe adicional */
+  font-size: var(--gt-font-size);
+  word-break: break-word;
+}
+
+/* Variante utilitária para títulos menores */
+.small {
+  font-size: 20px;
+}
+
+/* Classe utilitária para usar quando o componente for um `h1` */
+.h1 {
+  --gt-font-size: 40px;
+  --gt-line-height: 46px;
+}
+
+/* Variante cinza (grey-gradient) usada quando o componente recebe `variant="grey-gradient"` */
+.greyGradient {
+  background: linear-gradient(91.03deg, #898989 0.88%, #232323 99.86%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
