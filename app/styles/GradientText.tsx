@@ -46,6 +46,8 @@ const GradientText: React.FC<GradientTextProps> = ({
   // importar o módulo de `gradientText.module.scss` apenas para usar a
   // variação de título.
   const extraClass = as === "h1" && styles.h1 ? styles.h1 : "";
+  const extraClassH2 = as === "h2" && styles.h2 ? styles.h2 : "";
+  const extraClassP = as === "p" && styles.p ? styles.p : "";
   const variantClass =
     variant === "grey-gradient" && styles.greyGradient
       ? styles.greyGradient
@@ -53,7 +55,7 @@ const GradientText: React.FC<GradientTextProps> = ({
 
   return (
     <Tag
-      className={`${styles.gradientText} ${extraClass} ${variantClass} ${className}`.trim()}
+      className={`${styles.gradientText} ${extraClass} ${extraClassH2} ${extraClassP} ${variantClass} ${className}`.trim()}
       style={mergedStyle}
     >
       {children ?? text}

@@ -5,12 +5,14 @@ import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
 import { PhoneInput } from "@/components/Inputs";
 import { Beneficios } from "../manutencao/components";
-import Carrousel from "../manutencao/components/carrousel/Carrousel";
 import React, { useState } from "react";
 import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
+import CardsAndButton from "@/app/components/CardsAndButton/CardsAndButton";
 import { faqItems } from "../manutencao/components/utils/faqItems";
+import { skillsList } from "./utils/skills";
+import { skillsListItems } from "./utils/skillsItems";
 
 export default function ConsultoriaPage() {
   const [nome, setNome] = useState("");
@@ -186,7 +188,7 @@ export default function ConsultoriaPage() {
 
       <section
         data-name=" consultoria-content-section-cards"
-        className="mb-60 relative w-full bg-[#030B4D] "
+        className={`mb-20 relative w-full bg-[#030B4D] ${styles.clippedBottom}`}
       >
         <MouseShadowEffect
           effectImage="/effects/blue-light.png"
@@ -200,9 +202,84 @@ export default function ConsultoriaPage() {
           className="max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto"
         >
           <Beneficios />
+          <CardsAndButton
+            className="relative z-[60] mb-10"
+            title="Lorem ipsum"
+            cardTexts={[
+              "Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum.",
+              "Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum. ",
+              "Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum.",
+            ]}
+            buttonText="E MUITO MAIS"
+          />
         </article>
       </section>
 
+      <section
+        data-name="consultoria-skills"
+        className="desktop:w-main-desktop mb-60"
+      >
+        <div data-name="consultoria-skills-container" className="flex mb-10">
+          <div data-name="skills-text" className="w-[357px] ">
+            <GradientText data-name="consultoria-skills-title" as="h2">
+              Lorem ipsum dolor sit amet. at optio rerum sed laborum accusantium
+              rem
+            </GradientText>
+            <GradientText data-name="consultoria-skills-subtitle" as="p">
+              Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
+              laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet.
+            </GradientText>
+          </div>
+          <div data-name="skills-icons" className={styles.skillsIconsContainer}>
+            <div data-name="skills-grid" className={styles.skillsGrid}>
+              {skillsList.map((item, idx) => (
+                <div
+                  key={idx}
+                  data-name={`skill-item-${idx}`}
+                  className={styles.skillItem}
+                >
+                  <img
+                    data-name={`skill-icon-${idx}`}
+                    src={item.icon}
+                    alt={item.text}
+                    className={styles.skillIcon}
+                  />
+                  <div
+                    data-name={`skill-text-${idx}`}
+                    className={styles.skillText}
+                  >
+                    {item.text}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div data-name="skills-list" className="w-full">
+          <div data-name="consultoria-skills-list-container" className="flex  ">
+            <div data-name="skills-title" className="w-[357px] ">
+              <GradientText data-name="consultoria-skills-title" as="h2">
+                Lorem ipsum dolor sit amet. at optio rerum sed laborum
+                accusantium rem
+              </GradientText>
+            </div>
+            <div
+              data-name="skills-list-items"
+              className={styles.skillsListItems}
+            >
+              {skillsListItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  data-name={`skills-list-item-${idx}`}
+                  className={styles.skillsListItem}
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
       <section
         data-name=" consultoria-content"
         className="flex flex-col items-center gap-[60px]"

@@ -27,10 +27,21 @@
   font-size: 20px;
 }
 
-/* Classe utilitária para usar quando o componente for um `h1` */
+/* Classe utilitária  para o 'as' */
 .h1 {
   --gt-font-size: 40px;
   --gt-line-height: 46px;
+}
+
+.h2 {
+  --gt-font-size: 32px;
+  --gt-line-height: 38px;
+}
+
+.p {
+  --gt-font-size: 12px;
+  --gt-line-height: 18px;
+  font-weight: 400;
 }
 
 /* Variante cinza (grey-gradient) usada quando o componente recebe `variant="grey-gradient"` */

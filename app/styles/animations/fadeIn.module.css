@@ -1,8 +1,8 @@
 .fadeIn {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity var(--fade-duration) ease-out,
-    transform var(--fade-duration) ease-out;
+  transition: opacity var(--fade-duration-slow, var(--fade-duration)) ease-out,
+    transform var(--fade-duration-slow, var(--fade-duration)) ease-out;
 }
 
 .visible {
@@ -11,7 +11,8 @@
 }
 
 .animateFadeIn {
-  animation: fadeInUp var(--fade-duration) ease-out forwards;
+  animation: fadeInUp var(--fade-duration-slow, var(--fade-duration)) ease-out
+    forwards;
 }
 
 /* Force visible styles for children (useful when child has utility classes like `opacity-0`) */

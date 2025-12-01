@@ -13,7 +13,7 @@ export type FadeInOnViewProps = {
 export const FadeInOnView: React.FC<FadeInOnViewProps> = ({
   children,
   className = "",
-  threshold = 0.12,
+  threshold = 0.5,
   rootMargin = "0px",
   useAnimation = false,
 }) => {
