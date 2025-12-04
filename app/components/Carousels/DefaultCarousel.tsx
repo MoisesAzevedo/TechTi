@@ -1,11 +1,11 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/app/components/ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
-  CarouselPrevious
-} from "@/components/ui/carousel";
+  CarouselPrevious,
+} from "@/app/components/ui/carousel";
 import useCases from "./DefaultCarouselFeature/useCases";
 
 const DefaultCarousel = () => {
@@ -14,7 +14,7 @@ const DefaultCarousel = () => {
   return (
     <Carousel
       opts={{
-        align: "start"
+        align: "start",
       }}
     >
       <CarouselContent className="max-w-full  ">
@@ -23,7 +23,11 @@ const DefaultCarousel = () => {
             <div className="p-1">
               <Card className="  border-none shadow-[0px_4px_10px_0px_rgba(0,0,0,0.1)] bg-[#ffffff]">
                 <CardContent className="flex aspect-square items-center justify-center p-6 w-[199px] h-[112px]  ">
-                  <img src={c.src} alt={c.alt ?? c.id} className="max-w-[90%] max-h-[80%] object-contain" />
+                  <img
+                    src={c.src}
+                    alt={c.alt ?? c.id}
+                    className="max-w-[90%] max-h-[80%] object-contain"
+                  />
                 </CardContent>
               </Card>
             </div>

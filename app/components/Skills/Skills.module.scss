@@ -1,0 +1,158 @@
+/* Skills grid styles */
+.skillsIconsContainer {
+  flex: none; /* não expandir; largura fixa definida abaixo */
+  padding: 16px;
+  box-sizing: border-box;
+  border: 1px solid #e6e6e6; /* borda do container principal */
+  border-radius: 10px;
+  background: transparent;
+  width: 606px; /* largura solicitada */
+  max-width: 100%; /* garante responsividade em telas menores */
+  margin-left: auto; /* alinha o bloco `skills-icons` à direita do container pai */
+}
+
+@media (max-width: 1024px) {
+  .skillsIconsContainer {
+    margin-left: 0;
+    margin-right: auto;
+  }
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 180px);
+  gap: 16px;
+  width: 100%;
+  justify-content: end; /* alinha o grid à direita dentro do container */
+  margin-left: auto; /* garante empurrar o grid para a direita */
+}
+
+.skillItem {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  padding: 12px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* usaremos margin-top:auto no texto para colar no bottom */
+  align-items: stretch;
+  overflow: visible;
+}
+
+.skillIcon {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.skillText {
+  text-align: left;
+  font-weight: 600;
+  color: #6a6a6a;
+
+  margin-top: auto; /* força o texto a ficar colado na parte inferior do card */
+}
+
+/* Vertical separator centered in the gap between cards */
+.skillItem:not(:nth-child(3n))::after {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: -8px; /* half of the gap (16px) */
+  width: 1px;
+  height: calc(100% - 24px);
+  background: #e6e6e6;
+}
+
+/* Responsive: 2 columns on medium screens */
+@media (max-width: 1024px) {
+  .skillsGrid {
+    grid-template-columns: repeat(2, 180px);
+    justify-content: center; /* centraliza em telas médias */
+  }
+
+  .skillItem:not(:nth-child(2n))::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    right: -8px;
+    width: 1px;
+    height: calc(100% - 24px);
+    background: #e6e6e6;
+  }
+
+  .skillItem:not(:nth-child(3n))::after {
+    content: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  /* No vertical separators on single column layout */
+  .skillItem::after {
+    display: none;
+  }
+}
+
+/* Simple list (grid) used inside data-name="skills-list-items" */
+.skillsListItems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 16px 0 0 auto; /* alinha o bloco à direita dentro do container flex */
+  min-width: 606px; /* largura fixa solicitada */
+  max-width: 100%; /* evita overflow em telas menores */
+  box-sizing: border-box;
+  align-items: start;
+  align-self: flex-start;
+}
+
+.skillsListItem {
+  padding: 8px 12px 8px 40px; /* espaço à esquerda para o ícone */
+  border-radius: 6px;
+  color: var(--blue); /* usa a variável global definida em globals.css */
+  background: transparent;
+  text-align: left;
+  font-weight: 600;
+  white-space: normal;
+  word-break: break-word;
+  position: relative; /* para posicionar o pseudo-ícone à direita */
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    background-image: url("/icons/shadow_blue_dot.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .skillsListItems {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin: 16px 0 0; /* reset do alinhamento para telas médias */
+  }
+}
+
+@media (max-width: 480px) {
+  .skillsListItems {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 12px 0 0; /* reset do alinhamento para telas pequenas */
+  }
+}

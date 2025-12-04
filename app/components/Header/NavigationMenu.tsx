@@ -13,10 +13,10 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
+} from "@/app/components/ui/navigation-menu";
 import styles from "./navigation.module.scss";
 import DefaultButton from "../Buttons/DefaultButton";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/app/components/ui/button";
 
 const solutionsItems: { title: string; href: string; description: string }[] = [
   {

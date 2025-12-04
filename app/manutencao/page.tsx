@@ -3,7 +3,7 @@
 import styles from "./page.module.scss";
 import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
-import { PhoneInput } from "@/components/Inputs";
+import { PhoneInput } from "@/app/components/Inputs";
 import { Beneficios } from "./components";
 import Carrousel from "./components/carrousel/Carrousel";
 import React, { useState } from "react";

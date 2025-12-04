@@ -3,13 +3,18 @@
 import styles from "./page.module.scss";
 import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
-import { PhoneInput } from "@/components/Inputs";
-
+import { PhoneInput } from "@/app/components/Inputs";
+import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
 import React, { useState } from "react";
 
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
 import { faqItems } from "../manutencao/components/utils/faqItems";
+import OrbitalSkills from "@/app/components/OrbitalSkills/OrbitalSkills";
+import ServicesInf from "@/app/components/ServicesInf/ServicesInf";
+import { skillsList } from "../consultoria/utils/skills";
+import { skillsListItems } from "../consultoria/utils/skillsItems";
+import Skills from "@/app/components/Skills";
 
 export default function GestaoPage() {
   const [nome, setNome] = useState("");
@@ -152,7 +157,56 @@ export default function GestaoPage() {
           </div>
         </div>
       </section>
+      <section
+        data-name=" gestao-content-section-cards"
+        className={`mb-20 pt-20 relative w-full bg-[#030B4D] border-t [border-top-style:solid] border-transparent [border-image:linear-gradient(90deg,rgba(3,11,77,1)_0%,rgba(52,75,174,1)_50%,rgba(22,0,100,1)_100%)_1] ${styles.clippedBottom}`}
+      >
+        <MouseShadowEffect
+          effectImage="/effects/blue-light.png"
+          size={2000}
+          opacity={0.95}
+          blur={20}
+          className="absolute inset-0 pointer-events-none"
+        />
+        <article
+          data-name=" gestao-main-container"
+          className={`max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto`}
+        >
+          <h1
+            data-name="orbital-title"
+            className="relative z-50 text-white flex justify-center items-center text-center"
+          >
+            Lorem Ipsum dolor sit amet. <br /> Eum Maxime quae et optio rerum
+          </h1>
+          <div
+            data-name="orbital-skills-insert"
+            className="flex justify-center mt-8"
+          >
+            <OrbitalSkills />
+          </div>
 
+          <h1
+            data-name="services-title"
+            className="relative z-50 text-white flex justify-center items-center text-center"
+          >
+            Lorem Ipsum dolor sit amet. <br /> Eum Maxime quae et optio rerum
+          </h1>
+          <div
+            data-name="services-inf-insert"
+            className="flex justify-center mt-8"
+          >
+            <ServicesInf />
+          </div>
+        </article>
+      </section>
+      <Skills
+        title="Lorem ipsum dolor sit amet. at optio rerum sed laborum accusantium rem"
+        subtitle="Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet."
+        skillsList={skillsList}
+        showIconsGrid={false}
+        listTitle="Lorem ipsum dolor sit amet. at optio rerum sed laborum accusantium rem"
+        listItems={skillsListItems}
+      />
       <section
         data-name="faq-content"
         className="flex flex-col items-center gap-[60px]"

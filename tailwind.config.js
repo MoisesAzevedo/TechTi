@@ -28,6 +28,9 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        techti: {
+          green: "#5AFF5E",
+        },
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

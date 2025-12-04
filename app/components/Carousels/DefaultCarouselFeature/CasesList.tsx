@@ -1,6 +1,6 @@
 import React from "react";
 import { CaseItem } from "./types";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent } from "@/app/components/ui/card";
 
 interface Props {
   items: CaseItem[];
@@ -14,7 +14,11 @@ const CasesList: React.FC<Props> = ({ items }) => {
           <Card className="border-none shadow-[0px_4px_10px_0px_rgba(0,0,0,0.1)] bg-[#ffffff]">
             <CardContent className="flex aspect-square items-center justify-center p-6 w-[199px] h-[112px]">
               {/* Preferimos usar img padrão para maior compatibilidade com assets em public/ */}
-              <img src={item.src} alt={item.alt ?? item.id} className="max-w-[90%] max-h-[80%] object-contain" />
+              <img
+                src={item.src}
+                alt={item.alt ?? item.id}
+                className="max-w-[90%] max-h-[80%] object-contain"
+              />
             </CardContent>
           </Card>
         </div>
