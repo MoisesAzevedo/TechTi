@@ -4,19 +4,18 @@ import styles from "./page.module.scss";
 import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
 import { PhoneInput } from "@/app/components/Inputs";
-import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
+import { Beneficios } from "../manutencao/components";
 import React, { useState } from "react";
-
+import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
+import CardsAndButton from "@/app/components/CardsAndButton/CardsAndButton";
 import { faqItems } from "../manutencao/components/utils/faqItems";
-import OrbitalSkills from "@/app/components/OrbitalSkills/OrbitalSkills";
-import ServicesInf from "@/app/components/ServicesInf/ServicesInf";
-import { skillsList } from "../consultoria/utils/skills";
-import { skillsListItems } from "../consultoria/utils/skillsItems";
+import { skillsList } from "./types/skills";
+import { skillsListItems } from "./types/skillsItems";
 import Skills from "@/app/components/Skills";
 
-export default function GestaoPage() {
+export default function ConsultoriaPage() {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
   const [email, setEmail] = useState("");
@@ -30,16 +29,16 @@ export default function GestaoPage() {
 
   return (
     <div
-      data-name="gestao-page-root"
+      data-name="consultoria-page-root"
       className="flex flex-col justify-center items-center w-full mb-40"
     >
-      <section data-name="gestao-hero" className={styles.hero}>
+      <section data-name="consultoria-hero" className={styles.hero}>
         <div
-          data-name=" gestao-videoBackground"
+          data-name=" consultoria-videoBackground"
           className={styles.videoBackground}
         >
           <video
-            data-name=" gestao-background-video"
+            data-name=" consultoria-background-video"
             className={styles.backgroundVideo}
             autoPlay
             muted
@@ -52,41 +51,68 @@ export default function GestaoPage() {
           </video>
         </div>
 
-        <div data-name=" gestao-blueFilter" className={styles.blueFilter}></div>
         <div
-          data-name=" gestao-videoOverlay"
+          data-name=" consultoria-blueFilter"
+          className={styles.blueFilter}
+        ></div>
+        <div
+          data-name=" consultoria-videoOverlay"
           className={styles.videoOverlay}
         ></div>
 
-        <div data-name=" gestao-heroContainer" className={styles.heroContainer}>
-          <div data-name=" gestao-heroContent" className={styles.heroContent}>
-            <h1 data-name=" gestao-hero-title">Gestão</h1>
-            <p data-name=" gestao-hero-description">
+        <div
+          data-name=" consultoria-heroContainer"
+          className={styles.heroContainer}
+        >
+          <div
+            data-name=" consultoria-heroContent"
+            className={styles.heroContent}
+          >
+            <h1 data-name=" consultoria-hero-title">Consultoria</h1>
+            <p data-name=" consultoria-hero-description">
               Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed
               laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet.
             </p>
             <ServiceButton text="Lorem Ipsum" />
 
-            <div data-name=" gestao-logoSection" className={styles.logoSection}>
-              <div data-name=" gestao-logoItem" className={styles.logoItem}>
+            <div
+              data-name=" consultoria-logoSection"
+              className={styles.logoSection}
+            >
+              <div
+                data-name=" consultoria-logoItem"
+                className={styles.logoItem}
+              >
                 LOGO
               </div>
-              <div data-name=" gestao-logoItem" className={styles.logoItem}>
+              <div
+                data-name=" consultoria-logoItem"
+                className={styles.logoItem}
+              >
                 LOGO
               </div>
-              <div data-name=" gestao-logoItem" className={styles.logoItem}>
+              <div
+                data-name=" consultoria-logoItem"
+                className={styles.logoItem}
+              >
                 LOGO
               </div>
             </div>
           </div>
 
-          <div data-name=" gestao-formSection" className={styles.formSection}>
+          <div
+            data-name=" consultoria-formSection"
+            className={styles.formSection}
+          >
             <form
-              data-name=" gestao-contactForm"
+              data-name=" consultoria-contactForm"
               className={styles.contactForm}
               onSubmit={handleSubmit}
             >
-              <div data-name=" gestao-formRow-1" className={styles.formRow}>
+              <div
+                data-name=" consultoria-formRow-1"
+                className={styles.formRow}
+              >
                 <input
                   data-name="input-nome"
                   type="text"
@@ -115,7 +141,10 @@ export default function GestaoPage() {
                 className={`${styles.formInput} ${styles.fullWidth}`}
               />
 
-              <div data-name=" gestao-formRow-2" className={styles.formRow}>
+              <div
+                data-name=" consultoria-formRow-2"
+                className={styles.formRow}
+              >
                 <input
                   data-name="input-empresa"
                   type="text"
@@ -126,7 +155,7 @@ export default function GestaoPage() {
                   className={styles.formInput}
                 />
                 <div
-                  data-name=" gestao-numberInputContainer"
+                  data-name=" consultoria-numberInputContainer"
                   className={styles.numberInputContainer}
                 >
                   <select
@@ -157,9 +186,10 @@ export default function GestaoPage() {
           </div>
         </div>
       </section>
+
       <section
-        data-name=" gestao-content-section-cards"
-        className={`mb-20 pt-20 relative w-full bg-[#030B4D] border-t [border-top-style:solid] border-transparent [border-image:linear-gradient(90deg,rgba(3,11,77,1)_0%,rgba(52,75,174,1)_50%,rgba(22,0,100,1)_100%)_1] ${styles.clippedBottom}`}
+        data-name=" consultoria-content-section-cards"
+        className={`mb-20 relative w-full bg-[#030B4D] ${styles.clippedBottom}`}
       >
         <MouseShadowEffect
           effectImage="/effects/blue-light.png"
@@ -169,46 +199,33 @@ export default function GestaoPage() {
           className="absolute inset-0 pointer-events-none"
         />
         <article
-          data-name=" gestao-main-container"
-          className={`max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto`}
+          data-name=" consultoria-main-container"
+          className="max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto"
         >
-          <h1
-            data-name="orbital-title"
-            className="relative z-50 text-white flex justify-center items-center text-center"
-          >
-            Lorem Ipsum dolor sit amet. <br /> Eum Maxime quae et optio rerum
-          </h1>
-          <div
-            data-name="orbital-skills-insert"
-            className="flex justify-center mt-8"
-          >
-            <OrbitalSkills />
-          </div>
-
-          <h1
-            data-name="services-title"
-            className="relative z-50 text-white flex justify-center items-center text-center"
-          >
-            Lorem Ipsum dolor sit amet. <br /> Eum Maxime quae et optio rerum
-          </h1>
-          <div
-            data-name="services-inf-insert"
-            className="flex justify-center mt-8"
-          >
-            <ServicesInf />
-          </div>
+          <Beneficios />
+          <CardsAndButton
+            className="relative z-[60] mb-10"
+            title="Lorem ipsum"
+            cardTexts={[
+              "Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum.",
+              "Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum. ",
+              "Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum.",
+            ]}
+            buttonText="E MUITO MAIS"
+          />
         </article>
       </section>
+
       <Skills
         title="Lorem ipsum dolor sit amet. at optio rerum sed laborum accusantium rem"
         subtitle="Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum sed laborum accusantium rem quia eaque. Lorem ipsum dolor sit amet."
         skillsList={skillsList}
-        showIconsGrid={false}
+        showIconsGrid={true}
         listTitle="Lorem ipsum dolor sit amet. at optio rerum sed laborum accusantium rem"
         listItems={skillsListItems}
       />
       <section
-        data-name="faq-content"
+        data-name=" consultoria-content"
         className="flex flex-col items-center gap-[60px]"
       >
         <div data-name="faq-button-wrapper" className="  flex justify-center">

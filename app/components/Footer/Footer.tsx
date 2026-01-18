@@ -4,23 +4,23 @@ import Image from "next/image";
 
 const Footer: React.FC = () => {
   const aboutLinks = [
-    { text: "Sobre a Empresa", href: "/sobre" },
-    { text: "Termos e Condições", href: "/termos" },
-    { text: "Contato", href: "/contato" },
-    { text: "F.A.Q", href: "/faq" },
+    { text: "Sobre a Empresa", href: "/pages/sobre" },
+    { text: "Termos e Condições", href: "/pages/termos" },
+    { text: "Contato", href: "/pages/contato" },
+    { text: "F.A.Q", href: "/pages/faq" },
   ];
 
   const solutionLinks = [
-    { text: "Manutenção", href: "/manutencao" },
-    { text: "Consultoria", href: "/solucoes/consultoria" },
-    { text: "Infraestrutura", href: "/solucoes/infraestrutura" },
-    { text: "Gestão de T.I.", href: "/solucoes/gestao" },
+    { text: "Manutenção", href: "/pages/manutencao" },
+    { text: "Consultoria", href: "/pages/consultoria" },
+    { text: "Infraestrutura", href: "/pages/infraestrutura" },
+    { text: "Gestão de T.I.", href: "/pages/gestao" },
   ];
 
   const policyLinks = [
-    { text: "Política de Privacidade", href: "/privacidade" },
-    { text: "Política de Segurança", href: "/seguranca" },
-    { text: "Suporte", href: "/suporte" },
+    { text: "Política de Privacidade", href: "/pages/privacidade" },
+    { text: "Política de Segurança", href: "/pages/seguranca" },
+    { text: "Suporte", href: "/pages/suporte" },
   ];
 
   return (

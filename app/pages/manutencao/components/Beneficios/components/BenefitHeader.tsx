@@ -1,5 +1,5 @@
 import React from "react";
-import ProgressBar from "../../../../component/ProgressBar";
+import ProgressBar from "@/app/components/ProgressBar/ProgressBar";
 import useSectionScrollProgress from "../hooks/useSectionScrollProgress";
 
 export const BenefitHeader: React.FC = () => {

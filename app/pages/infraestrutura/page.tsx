@@ -4,10 +4,7 @@ import styles from "./page.module.scss";
 import ServiceButton from "@/app/components/Buttons/ServiceButton";
 import DefaultButton from "@/app/components/Buttons/DefaultButton";
 import { PhoneInput } from "@/app/components/Inputs";
-import { Beneficios } from "../manutencao/components";
-import Carrousel from "../manutencao/components/carrousel/Carrousel";
 import React, { useState } from "react";
-import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/MouseShadowEffect";
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
 import { faqItems } from "../manutencao/components/utils/faqItems";
@@ -174,8 +171,31 @@ export default function InfraestruturaPage() {
         <div className="max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto px-6">
           <TwoColumnSection
             leftText="Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum"
-            rightTitle="Suporte e Gestão"
-            rightText="Oferecemos suporte técnico, gestão de ativos e melhorias contínuas para reduzir custos e aumentar a eficiência operacional."
+            rightText={{
+              title: "Suporte e Gestão",
+              items: [
+                {
+                  title: "Monitoramento",
+                  text: "Monitoramento 24/7 de servidores e redes",
+                },
+                {
+                  title: "Gestão de Ativos",
+                  text: "Gestão de ativos e inventário de TI",
+                },
+                {
+                  title: "Automação",
+                  text: "Automação de rotinas e otimização de custos",
+                },
+                {
+                  title: "Segurança",
+                  text: "Padronização, segurança e conformidade",
+                },
+                {
+                  title: "Continuidade",
+                  text: "Planos de continuidade, backup e recuperação",
+                },
+              ],
+            }}
           />
         </div>
       </section>

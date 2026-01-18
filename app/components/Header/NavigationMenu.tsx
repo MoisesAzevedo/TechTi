@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import { cn } from "@/lib/utils";
 /* import { Icons } from "@/components/icons"; */
@@ -21,25 +22,25 @@ import { Button } from "@/app/components/ui/button";
 const solutionsItems: { title: string; href: string; description: string }[] = [
   {
     title: "Manutenção",
-    href: "/manutencao",
+    href: "/pages/manutencao",
     description:
       "Manutenção preventiva e corretiva de equipamentos e sistemas de TI para garantir máximo desempenho.",
   },
   {
     title: "Gestão de T.I.",
-    href: "/gestao",
+    href: "/pages/gestao",
     description:
       "Gestão completa da infraestrutura de TI, otimizando recursos e processos da sua empresa.",
   },
   {
     title: "Infraestrutura",
-    href: "/infraestrutura",
+    href: "/pages/infraestrutura",
     description:
       "Implementação e modernização de infraestrutura tecnológica robusta e escalável.",
   },
   {
     title: "Consultoria",
-    href: "/consultoria",
+    href: "/pages/consultoria",
     description:
       "Consultoria especializada em tecnologia para orientar as melhores decisões estratégicas.",
   },
@@ -48,25 +49,25 @@ const solutionsItems: { title: string; href: string; description: string }[] = [
 const aboutItems: { title: string; href: string; description: string }[] = [
   {
     title: "Nossa História",
-    href: "/sobre/historia",
+    href: "/pages/sobre/historia",
     description:
       "Conheça a trajetória da TechTI e como nos tornamos referência em tecnologia.",
   },
   {
     title: "Missão e Valores",
-    href: "/sobre/missao",
+    href: "/pages/sobre/missao",
     description:
       "Nossos princípios e compromissos que guiam cada projeto e relacionamento.",
   },
   {
     title: "Equipe",
-    href: "/sobre/equipe",
+    href: "/pages/sobre/equipe",
     description:
       "Profissionais especializados e certificados em diversas tecnologias.",
   },
   {
     title: "Certificações",
-    href: "/sobre/certificacoes",
+    href: "/pages/sobre/certificacoes",
     description:
       "Reconhecimentos e certificações que garantem a qualidade dos nossos serviços.",
   },
@@ -78,7 +79,7 @@ const aboutItems: { title: string; href: string; description: string }[] = [
   },
   {
     title: "Carreira",
-    href: "/sobre/carreira",
+    href: "/pages/sobre/carreira",
     description:
       "Oportunidades de crescimento profissional em um ambiente inovador.",
   },
@@ -128,7 +129,14 @@ export function Navigation() {
       {/* exists a div here. Style in styles.header child(1) */}
       <NavigationMenuList className={styles.nav}>
         <Link href="/">
-          <img className={styles.logo} src="./logo/favicon.svg" />
+          <Image
+            className={styles.logo}
+            src="/logo/logo.svg"
+            alt="Logo"
+            width={35}
+            height={35}
+            priority
+          />
         </Link>
 
         <div className={styles.navigation_container}>
@@ -238,7 +246,7 @@ const ListItem = React.forwardRef<
           ref={ref}
           className={cn(
             "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            className,
           )}
           {...props}
         >

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styles from "./carrousel.module.scss";
-import ClientSlider from "../../../pages/home/components/ClientSlider/ClientSlider";
+import ClientSlider from "../../../../pages/home/components/ClientSlider/ClientSlider";
 
 const Carrousel: React.FC = () => {
   return (
