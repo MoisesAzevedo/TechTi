@@ -31,7 +31,7 @@ module.exports = {
         techti: {
           green: "#5AFF5E",
         },
-        background: "hsl(var(--background))",
+        background: "var(--blue-background)",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",

@@ -11,6 +11,7 @@ import MouseShadowEffect from "@/app/pages/home/components/MouseShadowEffect/Mou
 import GradientText from "@/app/styles/GradientText";
 import FAQ from "@/app/components/FAQ";
 import { faqItems } from "../manutencao/components/utils/faqItems";
+import TwoColumnSection from "@/app/components/TwoColumnSection";
 
 export default function InfraestruturaPage() {
   const [nome, setNome] = useState("");
@@ -166,6 +167,16 @@ export default function InfraestruturaPage() {
               </button>
             </form>
           </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-background text-white ">
+        <div className="max-w-main-phone tablet:max-w-main-tablet desktop:max-w-main-desktop mx-auto px-6">
+          <TwoColumnSection
+            leftText="Lorem ipsum dolor sit amet. Eum maxime quae et optio rerum"
+            rightTitle="Suporte e Gestão"
+            rightText="Oferecemos suporte técnico, gestão de ativos e melhorias contínuas para reduzir custos e aumentar a eficiência operacional."
+          />
         </div>
       </section>
 

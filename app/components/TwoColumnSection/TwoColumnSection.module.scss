@@ -1,0 +1,89 @@
+.section {
+  position: relative;
+  overflow: visible;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  position: relative;
+  padding: 32px 16px;
+}
+
+/* linha divisória vertical entre as colunas */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: #344bae;
+  transform: translateX(-0.5px);
+}
+
+.column {
+  padding: 0 24px;
+}
+
+.leftColumn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.leftText {
+  font-size: 40px;
+  line-height: 1.1;
+  margin: 0;
+  text-align: left;
+}
+
+/* garantir que títulos e parágrafos nas colunas fiquem alinhados à esquerda */
+.column h3,
+.column p {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  .container::before {
+    display: none; /* remover divisor em mobile */
+  }
+}
+
+/* gradiente topo e base: transparente nas pontas, #344BAE no centro */
+.section::before,
+.section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 20%,
+    #344bae 50%,
+    transparent 80%,
+    transparent 100%
+  );
+}
+.section::before {
+  top: 0;
+}
+.section::after {
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .section::before,
+  .section::after {
+    display: none; /* esconder barras em telas pequenas, se desejar ajustar */
+  }
+}

@@ -171,7 +171,7 @@ export default function ManutencaoPage() {
 
       <section
         data-name="manutencao-content-section-cards"
-        className="mb-60 relative w-full bg-[#030B4D] "
+        className="mb-60 relative w-full bg-background "
       >
         <MouseShadowEffect
           effectImage="/effects/blue-light.png"
