@@ -1,8 +1,6 @@
-...existing code...
-
 # TechTi — Corporate Website
 
-Tutorial de uso
+## Tutorial de uso
 
 1. Requisitos: Node.js (recomendado >= 16) e npm/yarn/pnpm.
 2. Instalar dependências:
@@ -14,9 +12,46 @@ Tutorial de uso
 5. Rodar em produção:
    - npm run start
 
-Link do projeto em produção:
+## Fluxo de branches
 
-Arquitetura do projeto (visão geral)
+### main
+
+- Contém apenas código estável pronto para produção.
+- Não recebe commits diretos.
+- Só recebe merge da branch develop via Pull Request.
+
+### develop
+
+- Branch de integração, sempre atualizada com as últimas features e correções.
+- Não recebe commits diretos.
+- Recebe Pull Requests das branches feature/_ e bugfix/_.
+- feature/nome-da-feature-em-ingles
+- Criada a partir da develop.
+- Usada para implementar novas funcionalidades.
+- Após concluída, gera Pull Request para develop.
+
+### bugfix/nome-ou-breve-descricao-do-bug-em-ingles
+
+- Criada a partir da develop.
+- Usada para corrigir bugs não críticos.
+- Após concluída, gera Pull Request para develop.
+
+### Regras gerais
+
+- Nunca fazer commits diretos em main ou develop.
+- Sempre usar nomes curtos, descritivos e em inglês para branches.
+- Todo código deve passar por Pull Request antes de ser integrado.
+- antes de cada push (ou de preferencia, antes de cada commit), atualize sua "develop" com os comandos a seguir:
+  1.  git checkout develop
+  2.  git pull
+  3.  git checkout nome-da-banch-que-estava
+  4.  git merge develop
+
+## Link do projeto em produção:
+
+(Em breve)
+
+## Arquitetura do projeto (visão geral)
 
 - app/ — raiz da aplicação (Next.js app router)
   - pages/ — rotas e páginas. Cada pasta aqui representa uma rota; os elementos individuais daquela página (componentes e hooks específicos) devem ficar dentro da pasta da página.
